@@ -5,10 +5,10 @@
         .module('app')
         .controller('profileController', profileController);
 
-    profileController.$inject = ['dependencies'];
+    profileController.$inject = ['toastr'];
     
     /* @ngInject */
-    function profileController(dependencies) {
+    function profileController(toastr) {
         var vm = this;
         vm.title = 'profileController';
 

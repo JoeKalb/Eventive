@@ -5,10 +5,10 @@
         .module('app')
         .controller('registerController', registerController);
 
-    registerController.$inject = ['dependencies'];
+    registerController.$inject = ['toastr'];
     
     /* @ngInject */
-    function registerController(dependencies) {
+    function registerController(toastr) {
         var vm = this;
         vm.title = 'registerController';
 

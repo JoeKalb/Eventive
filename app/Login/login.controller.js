@@ -5,10 +5,10 @@
         .module('app')
         .controller('loginController', loginController);
 
-    loginController.$inject = ['dependencies'];
+    loginController.$inject = ['toastr'];
     
     /* @ngInject */
-    function loginController(dependencies) {
+    function loginController(toastr) {
         var vm = this;
         vm.title = 'loginController';
 

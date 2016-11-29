@@ -1,12 +1,12 @@
 (function() {
     'use strict';
-    angular
+    var app = angular
         .module('app', [
-            'ui-router'
+            'ui.router', 'toastr'
         ])
 
-        .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-        	$urlRouterProvider.outherwise('/home');
+        app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+        	$urlRouterProvider.otherwise('/home');
 
         	$stateProvider
         		.state('home', {
@@ -17,21 +17,21 @@
         		})
 
         		.state('login', {
-					url: '/home',
+					url: '/login',
     				templateUrl: 'app/Login/login.html',
     				controller: 'loginController',
     				controllerAs: 'vm'
         		})
 
         		.state('profile', {
-        			url: '/home',
+        			url: '/profile',
     				templateUrl: 'app/Profile/profile.html',
     				controller: 'profileController',
     				controllerAs: 'vm'
         		})
 
         		.state('register', {
-        			url: '/home',
+        			url: '/register',
     				templateUrl: 'app/Register/register.html',
     				controller: 'registerController',
     				controllerAs: 'vm'
