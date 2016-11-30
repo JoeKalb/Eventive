@@ -2,10 +2,10 @@
 <html lang="en" ng-app="app">
 <head>
   <meta charset="UTF-8">
-  <title>Gulp Demo</title>
+  <title>Wine And Paint</title>
 <!-- bower:css -->
 <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
-<link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.css" />
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
 <!-- endbower -->
 
 <!-- inject:css -->
@@ -14,16 +14,29 @@
 </head>
 
 <body>
-<nav>
-	<ul>
-		<li>HOME</li>
-		<li>ABOUT US</li>
-		<li>HOW IT WORKS</li>
-		<li>GALLERY</li>
-		<li><button ui-sref="login">SIGN UP</button></li>
-	</ul>
-</nav>
-<div ui-view></div>
+	<!-- static top navigation bar -->
+	<nav>
+		<div class="navbar navbar-default">
+			<div class="container">
+		  		<div id="navbar-main">
+		    		<ul class="nav navbar-nav navbar-right">
+						<li><button id="btn" type="button" class="btn btn-link" ui-sref="home">HOME</li>
+						<li><button id="btn" type="button" class="btn btn-link" ui-sref="about">ABOUT US</li>
+						<li><button id="btn" type="button" class="btn btn-link" ui-sref="gallery">GALLERY</li>
+						<li><button id="btn" type="button" class="btn btn-link" ui-sref="upcoming">UPCOMING EVENTS</li>
+						<li><button id="btn" type="button" class="btn btn-link" ui-sref="login">SIGN UP</li>
+		     		</ul>
+		   		</div>
+		 	</div>
+		</div> 
+	</nav>
+	<!-- ui view for different states in the web app -->
+	<div id="contentarea">
+		<div ui-view>
+			
+		</div>
+	</div>
+
 <!-- bower:js -->
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-messages/angular-messages.js"></script>
@@ -32,8 +45,6 @@
 <script src="bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <!-- endbower -->
 
 <!-- inject:js -->

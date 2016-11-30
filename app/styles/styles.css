@@ -1,0 +1,15 @@
+
+/*top navigation bar styling starts here*/
+#navbar-main {
+	padding-top: 35px;
+	height: 100px;
+}
+/*nav bar button page styling*/
+#btn {
+	float: right;
+	padding: 0px 25px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/*top navigation bar styling ends here*/
