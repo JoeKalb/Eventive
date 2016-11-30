@@ -17,7 +17,13 @@
     "angularjs-dropdown-multiselect": "^1.5.2",
     "angular-ui-router": "^0.3.1",
     "angular": "^1.5.8",
-    "bootstrap-select": "^1.11.2",
     "bootstrap": "^3.3.7"
+  },
+    "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css"
+      ]
+    }
   }
 }
