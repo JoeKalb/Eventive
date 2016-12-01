@@ -3,7 +3,9 @@
     var app = angular
         .module('app', [
             'ui.router', 'toastr'
-        ])
+        ]);
+
+        app.value ('wineServer', 'http://localhost:3000/api/');
 
         app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         	$urlRouterProvider.otherwise('/home');

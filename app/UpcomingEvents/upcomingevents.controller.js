@@ -5,10 +5,10 @@
         .module('app')
         .controller('upcomingEventsController', upcomingEventsController);
 
-    upcomingEventsController.$inject = ['toastr'];
+    upcomingEventsController.$inject = ['toastr', 'EventsFactory'];
     
     /* @ngInject */
-    function upcomingEventsController(toastr) {
+    function upcomingEventsController(toastr, EventsFactory) {
         var vm = this;
         vm.title = 'upcomingEventsController';
 
@@ -17,6 +17,10 @@
         ////////////////
 
         function activate() {
+            EventsFactory.getAllEvents().then(
+                function(response){
+                    console.log(response);
+                })
         }
     }
 })();
