@@ -69,5 +69,4 @@ gulp.task('start', function () {
   })
 });
 
-
 gulp.task('serve', ['connect', 'start', 'watch', 'injectables', 'app']);

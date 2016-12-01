@@ -17,6 +17,10 @@ var userSchema = new mongoose.Schema({
 		unique: true,
 		required: true
 	},
+	role: {
+		type: String,
+		required: true
+	},
 	hash: String,
 	salt: String
 }, { versionKey: false });
