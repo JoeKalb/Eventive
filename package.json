@@ -28,6 +28,7 @@
     "gulp-connect": "^5.0.0",
     "gulp-inject": "^4.1.0",
     "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "^2.2.1",
     "gulp-open": "^2.0.0",
     "gulp-util": "^3.0.7",
     "jsonwebtoken": "^7.1.9",
