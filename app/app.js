@@ -39,7 +39,7 @@
 
                 .state('login', {
                     url: '/login',
-                    templateUrl: 'app/Login/login.html',
+                    templateUrl: 'app/Authentication/login.html',
                     controller: 'loginController',
                     controllerAs: 'vm'
                 })
@@ -53,7 +53,7 @@
 
         		.state('register', {
         			url: '/register',
-    				templateUrl: 'app/Register/register.html',
+    				templateUrl: 'app/Authentication/register.html',
     				controller: 'registerController',
     				controllerAs: 'vm'
         		})
