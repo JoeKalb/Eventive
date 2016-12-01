@@ -1,15 +1,119 @@
+/*Styling broken down in sections*/
 
-/*top navigation bar styling starts here*/
-#navbar-main {
-	padding-top: 35px;
-	height: 100px;
+
+/*ui-view styling starts*/
+#contentarea {
+	background-color: lightgrey;
+	padding-top: 100px;
 }
-/*nav bar button page styling*/
+/*ui-view styling ends*/
+
+
+/*top navigation bar styling starts*/
+#navbar_top {
+	padding-top: 0;
+	height: 100px;
+	background-color: white;
+}
+
 #btn {
 	float: right;
-	padding: 0px 25px;
+	padding: 35px 25px;
 	font-weight: bold;
 	text-decoration: none;
+	color: black;
 }
 
-/*top navigation bar styling ends here*/
+.btn:focus,
+.btn:active {
+   outline: none !important;
+}
+
+#btnnav .btn:hover {
+   color: #ed1f7e !important;
+}
+
+#logo {
+	padding-top: 0;
+}
+/*top navigation bar styling ends*/
+
+
+/*upcoming evnts page styling starts*/
+#uevents_box {
+	width: auto;
+	height: 250px;
+	padding: 30px;
+	border: 5px solid gray;
+	margin: 0;
+	list-style-type: none;
+}
+
+#uevents_items {
+	margin: auto;
+	width: 100%;
+	padding: 0px 30px;
+}
+
+/*upcomign events page styling ends*/
+#login_box {
+	padding-top: 70px;
+}
+/*sign up page styles starts*/
+
+/*profile page styling starts*/
+/*profile picture box*/
+#picbox {
+	width: 250px;
+	height: 250px;
+	padding: 10px;
+	border: 5px solid gray;
+	margin: 0;
+	overflow-y: auto;
+}
+
+/*profile information box*/
+#prof_info {
+	width: 500px;
+	height: 250px;
+	padding: 10px;
+	border: 5px solid gray;
+	margin: 0;
+	list-style-type: none;
+}
+
+/*upcoming events box*/
+#pevents_box {
+	width: 765px;
+	height: auto;
+	padding: 10px;
+	border: 5px solid gray;
+	margin: 0;
+}
+
+#pevents_table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+#pevents_table td:hover {
+	background-color: #ed1f7e;
+}
+
+#profile_body {
+	align-content: center;
+}
+/*profile page styling ends*/
+
+
+/* footer navbar styling starts*/
+#navbar_bot {
+	height: 100px;
+	background-color: white;
+}
+
+h5 {
+	padding-top: 35px;
+	text-align: center;
+}
+/* footer navbar styling ends*/

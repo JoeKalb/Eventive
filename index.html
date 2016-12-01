@@ -16,14 +16,15 @@
 <body>
 	<!-- static top navigation bar -->
 	<nav>
-		<div class="navbar navbar-default">
+		<div class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar_top">
 			<div class="container">
-		  		<div id="navbar-main">
-		    		<ul class="nav navbar-nav navbar-right">
+		  		<div>
+		  			<img src="../app/styles/pictures/wpalogo250.png" style="width:170px;height:100px" id="logo">
+		    		<ul class="nav navbar-nav navbar-right" id="btnnav">
 						<li><button id="btn" type="button" class="btn btn-link" ui-sref="home">HOME</li>
-						<li><button id="btn" type="button" class="btn btn-link" ui-sref="about">ABOUT US</li>
+						<li><button id="btn" type="button" class="btn btn-link" ui-sref="aboutus">ABOUT US</li>
 						<li><button id="btn" type="button" class="btn btn-link" ui-sref="gallery">GALLERY</li>
-						<li><button id="btn" type="button" class="btn btn-link" ui-sref="upcoming">UPCOMING EVENTS</li>
+						<li><button id="btn" type="button" class="btn btn-link" ui-sref="upcomingevents">UPCOMING EVENTS</li>
 						<li><button id="btn" type="button" class="btn btn-link" ui-sref="login">SIGN UP</li>
 		     		</ul>
 		   		</div>
@@ -31,11 +32,19 @@
 		</div> 
 	</nav>
 	<!-- ui view for different states in the web app -->
-	<div id="contentarea">
-		<div ui-view>
-			
+	<body id="contentarea">
+		<div ui-view></div>
+	</body>
+
+	<nav>
+		<div class="navbar navbar-default navbar-fixed-bottom" role="navigation" id="navbar_bot">
+			<div class="container">
+				<div>
+					<h5><b>&#174; JJ STUDIOS</b></h5>
+				</div>
+			</div>
 		</div>
-	</div>
+	</nav>
 
 <!-- bower:js -->
 <script src="bower_components/angular/angular.js"></script>

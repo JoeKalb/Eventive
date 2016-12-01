@@ -1,0 +1,58 @@
+<div ui-view></div>
+
+<div class="container" id="login_box">
+	<div class="panel-group">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h1>Profile Page</h1>
+				<div class="panel-body">
+					<div class="row">
+						<!-- profile picture image box -->
+						<div class="col-md-6" id="picbox">picture goes here</div>
+					
+						<!-- profile information box -->
+						<div class="col-md-6">
+							<ul id="prof_info">
+								<li><p>User Name</p></li>
+								<li><p>Phone Number</p></li>
+								<li><p>Email</p></li>
+								<!-- edit profile button -->
+								<button type="button" class="btn btn-default" style="float: right">Edit</button>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- upcoming events list -->
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-12" id="pevents_box">
+							<tr>
+								<th><b>Upcoming Events</b></th>
+							</tr>
+							<table class="table" id="pevents_table">
+					
+								<!-- upcoming events to be setup in ng-repeat to populte events -->
+								<tr>
+									<td>Event 1</td>
+								</tr>
+								<tr>
+									<td>Event 2</td>
+								</tr>
+								<tr>
+									<td>Event 3</td>
+								</tr>
+								<tr>
+									<td>Event 4</td>
+								</tr>
+							</table>
+							
+							<!-- remove upcoming event button -->
+							<button type="button" class="btn btn-default" style="float: right">Remove Event</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

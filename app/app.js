@@ -16,12 +16,33 @@
     				controllerAs: 'vm'
         		})
 
-        		.state('login', {
-					url: '/login',
-    				templateUrl: 'app/Login/login.html',
-    				controller: 'loginController',
-    				controllerAs: 'vm'
-        		})
+                .state('aboutus', {
+                    url: '/aboutus',
+                    templateUrl: 'app/AboutUs/aboutus.html',
+                    controller: 'aboutUsController',
+                    controllerAs: 'vm'
+                })
+
+                .state('gallery', {
+                    url: '/gallery',
+                    templateUrl: 'app/Gallery/gallery.html',
+                    controller: 'galleryController',
+                    controllerAs: 'vm'
+                })
+
+                .state('upcomingevents', {
+                    url: '/upcomingevents',
+                    templateUrl: 'app/UpcomingEvents/upcomingevents.html',
+                    controller: 'upcomingEventsController',
+                    controllerAs: 'vm'
+                })
+
+                .state('login', {
+                    url: '/login',
+                    templateUrl: 'app/Login/login.html',
+                    controller: 'loginController',
+                    controllerAs: 'vm'
+                })
 
         		.state('profile', {
         			url: '/profile',
