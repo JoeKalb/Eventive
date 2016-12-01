@@ -4,7 +4,14 @@ var Event = mongoose.model('Event');
 module.exports.eventRead = function(req, res) {
 	Event.find(function(err, events){
 		if (err) res.send(err);
-		res.status(200).json(events);
+		else res.status(200).json(events);
+	});
+}
+
+module.exports.singleEventRead = function(req, res) {
+	Event.findById(req.params.event_id, function(err, event){
+		if (err) res.send(err);
+		else res.status(200).json(event);
 	});
 }
 
@@ -23,16 +30,20 @@ module.exports.eventPost = function(req, res) {
 }
 
 module.exports.eventAddAttendee = function(req, res) {
-	if (!req.params._id) {
+	if (!req.params.event_id) {
 		res.status(404).json({
 			"message": "Event not found"
 		});
 	} else {
 		Event
-			.findById(req.params._id)
-			.params.attendees.push(req.body._id)
-			.exec(function(err, event) {
-				res.status(200).json(event);
-			}); 
+			.findById(req.params.event_id, function(err, event) {
+				event.attendees.push(req.body._id);
+
+				event.save(function(err){
+					if (err) res.send(err);
+					else res.status(200).json(event);
+				})
+			});
+			
 	}
 }

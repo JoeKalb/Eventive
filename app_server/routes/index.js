@@ -22,7 +22,8 @@ router.post('/login', ctrlAuth.login);
 
 // events 
 router.get('/events', ctrlEvent.eventRead);
+router.get('/events/:event_id', ctrlEvent.singleEventRead);
 router.post('/events', auth, ctrlEvent.eventPost);
-router.put('/events/:id', auth, ctrlEvent.eventAddAttendee);
+router.put('/events/:event_id', auth, ctrlEvent.eventAddAttendee);
 
 module.exports = router;
