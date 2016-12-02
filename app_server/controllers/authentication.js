@@ -18,7 +18,10 @@ module.exports.register = function(req, res) {
 	user.setPassword(req.body.password);
 
 	user.save(function(err) {
-		if (err) res.status(404).json(err);
+		if (err) {
+			res.status(404).json(err);
+			return;
+		}
 		var token;
 		token = user.generateJwt();
 		res.status(200);
