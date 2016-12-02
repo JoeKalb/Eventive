@@ -4,7 +4,7 @@
 /*ui-view styling starts*/
 	#contentarea {
 		background-color: lightgrey;
-		padding-top: 100px;
+		margin: 100px 0px;
 	}
 /*ui-view styling ends*/
 

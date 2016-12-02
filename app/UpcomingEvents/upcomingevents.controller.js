@@ -20,6 +20,8 @@
             EventsFactory.getAllEvents().then(
                 function(response){
                     console.log(response);
+
+                    vm.events = response;
                 })
         }
     }

@@ -11,22 +11,22 @@
 
 							<!-- Registration page for new users -->
 							<label>Full Name</label>
-							<input type="input" class="form-control" placeholder="Enter Full Name"><br>
+							<input type="input" class="form-control" placeholder="Enter Full Name" ng-model="vm.name"><br>
 
 							<label>Password</label>
-							<input type="input" class="form-control" placeholder="Enter Password"><br>
+							<input type="input" class="form-control" placeholder="Enter Password" ng-model="vm.password"><br>
 
 							<label>Confirm Password</label>
 							<input type="input" class="form-control" placeholder="Re-type Password"><br>
 
 							<label>Email</label>
-							<input type="input" class="form-control" placeholder="Enter Email"><br>
+							<input type="input" class="form-control" placeholder="Enter Email" ng-model="vm.email"><br>
 
 							<label>Phone Number</label>
-							<input type="input" class="form-control" placeholder="Enter Phone Number"><br>
+							<input type="input" class="form-control" placeholder="Enter Phone Number" ng-model="vm.number"><br>
 
 							<!-- Submit button to go to profile page -->
-							<button type="button" class="btn btn-default" ui-sref="profile">Submit</button>
+							<button type="button" class="btn btn-default" ng-click="vm.register()">Submit</button>
 						</div>
 					</form>
 				</div>

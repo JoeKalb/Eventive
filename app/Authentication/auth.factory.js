@@ -27,6 +27,7 @@
         			"email": email,
         			"name": name,
         			"number": number,
+                    "role": "attendee",
         			"password": password
         		}
         	}

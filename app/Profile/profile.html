@@ -4,7 +4,7 @@
 	<div class="panel-group">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h1>Profile Page</h1>
+				<h1>{{vm.name}} Page</h1>
 				<div class="panel-body">
 					<div class="row">
 						<!-- profile picture image box -->
@@ -13,10 +13,9 @@
 						<!-- profile information box -->
 						<div class="col-md-6">
 							<ul id="prof_info">
-								<li><p>User Name</p></li>
-								<li><p>Phone Number</p></li>
-								<li><p>Email</p></li>
-								<li><p>Password</p></li>
+								<li><p>Name: {{vm.name}}</p></li>
+								<li><p>Email: {{vm.email}}</p></li>
+								<li><p>Phone Number: {{vm.number}}</p></li>
 								<!-- edit profile button -->
 								<button type="button" class="btn btn-default" style="float: right">Edit</button>
 							</ul>
