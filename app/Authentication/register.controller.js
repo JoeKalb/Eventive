@@ -41,6 +41,14 @@
                             setStorage('token', token);
                             $state.go("profile")
                         })
+                },
+                function (error) {
+                    toastr.error('Please fill out information');
+
+                    vm.email = " ";
+                    vm.password = " ";
+                    vm.number = " ";
+                    vm.name = " ";
                 })
         }
     }

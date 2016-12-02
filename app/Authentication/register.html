@@ -6,25 +6,26 @@
 			<div class="panel-heading">
 				<h1>Registration</h1>
 				<div class="panel-body">
-					<form>
+					<form name="userForm" ng-submit="submitForm()"> 
 						<div class="form-group">
 
-							<!-- Registration page for new users -->
+						<!-- Registration page for new users -->
+							<!-- NAME -->
 							<label>Full Name</label>
 							<input type="input" class="form-control" placeholder="Enter Full Name" ng-model="vm.name"><br>
 
+							<!-- PASSWORD -->
 							<label>Password</label>
 							<input type="input" class="form-control" placeholder="Enter Password" ng-model="vm.password"><br>
 
-							<label>Confirm Password</label>
-							<input type="input" class="form-control" placeholder="Re-type Password"><br>
-
+							<!-- EMAIL -->
 							<label>Email</label>
 							<input type="input" class="form-control" placeholder="Enter Email" ng-model="vm.email"><br>
-
+							
+							<!-- PHONE NUMBER -->
 							<label>Phone Number</label>
 							<input type="input" class="form-control" placeholder="Enter Phone Number" ng-model="vm.number"><br>
-
+				
 							<!-- Submit button to go to profile page -->
 							<button type="button" class="btn btn-default" ng-click="vm.register()">Submit</button>
 						</div>
