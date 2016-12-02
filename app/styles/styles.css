@@ -36,6 +36,13 @@
 	   outline: none !important;
 	}
 
+	#btn:focus {
+		color: #ed1f7e !important;
+		font-size: 25px;
+		font-variant: small-caps;
+		transition-duration: .2s;
+	}
+
 	#btnnav .btn:hover {
 	   color: #ed1f7e !important;
 	}
@@ -43,6 +50,7 @@
 	#logo {
 		padding-top: 0;
 	}
+
 /*top navigation bar styling ends*/
 
 
