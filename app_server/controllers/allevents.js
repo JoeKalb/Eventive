@@ -43,7 +43,6 @@ module.exports.eventAddAttendee = function(req, res) {
 					if (err) res.send(err);
 					else res.status(200).json(event);
 				})
-			});
-			
+			});	
 	}
 }
