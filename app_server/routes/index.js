@@ -15,6 +15,7 @@ router.get('/', function (req, res){
 });
 // profile connection
 router.get('/profile', auth, ctrlProfile.profileRead);
+router.put('/profile/:profile_id', auth, ctrlProfile.profileEdit);
 
 // authentication
 router.post('/register', ctrlAuth.register);

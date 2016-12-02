@@ -16,3 +16,16 @@ module.exports.profileRead = function(req, res) {
 			});
 	}
 };
+
+module.exports.profileEdit = function(req, res) {
+	User.findById(req.params.profile_id, function (err, user){
+		user.name = req.body.name;
+		user.email = req.body.email;
+		user.number = req.body.number;
+		return user.save(function(err) {
+			if (err) console.log(err);
+			else console.log("profile updated");
+			return res.status(200).json(user);
+		});
+	});
+};
