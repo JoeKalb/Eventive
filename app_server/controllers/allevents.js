@@ -37,12 +37,32 @@ module.exports.eventAddAttendee = function(req, res) {
 	} else {
 		Event
 			.findById(req.params.event_id, function(err, event) {
-				event.attendees.push(req.body._id);
+				event.attendees.push(req.body);
 
 				event.save(function(err){
 					if (err) res.send(err);
 					else res.status(200).json(event);
 				})
 			});	
+	}
+}
+
+module.exports.eventRemoveAttendee = function(req, res) {
+	if (!req.params.event_id) {
+		res.status(404).json({
+			"message": "Event not found"
+		});
+	} else {
+		Event
+			.findById(req.params.event_id, function(err, event) {
+				if (err) res.send(err);
+				var user = event.attendees.indexOf(req.body._id);
+				event.attendees.splice(user, 1);
+
+				event.save(function(err) {
+					if (err) res.send(err);
+					else res.status(200).json(event);
+				})
+			});
 	}
 }

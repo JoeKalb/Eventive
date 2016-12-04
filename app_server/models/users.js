@@ -43,6 +43,8 @@ userSchema.methods.generateJwt = function() {
 		_id: this._id,
 		email: this.email,
 		name: this.name,
+		number: this.number,
+		role: this.role,
 		exp: parseInt(expiry.getTime() / 1000),
 	}, "PINOT"); // this is a secret
 };

@@ -18,9 +18,9 @@ var eventSchema = new mongoose.Schema({
 		required: true
 	},
 	attendees: [{
-		type: mongoose.Schema.Types.ObjectId,
-		required: false
-	}],
+		attendeeid: mongoose.Schema.Types.ObjectId,
+		attendeename: String
+	}, { _id : false }],
 }, {versionKey: false});
 
 mongoose.model('Event', eventSchema);
