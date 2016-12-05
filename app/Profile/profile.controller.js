@@ -5,13 +5,13 @@
         .module('app')
         .controller('profileController', profileController);
 
-    profileController.$inject = ['toastr', 'storageFactory', 'EventsFactory'];
+    profileController.$inject = ['toastr', 'storageFactory', 'EventsFactory', '$state', '$stateParams'];
     
     /* @ngInject */
-    function profileController(toastr, storageFactory, EventsFactory) {
+    function profileController(toastr, storageFactory, EventsFactory, $state, $stateParams) {
         var vm = this;
         vm.title = 'profileController';
-
+        vm.removeEvent;
         activate();
 
         ////////////////
@@ -32,6 +32,17 @@
                 function(error) {
                     toastr.error("Something went wrong in the profile controller.")
                 })
+        }
+
+        vm.removeEvent = function(eventId) {
+            EventsFactory.removeEventFromUser(eventId, vm.id, vm.token).then(
+                function(response) {
+                    console.log(response);
+                    $state.reload()
+                },
+                function(error) {
+                    toastr.error("Problem removing user from event");
+                });
         }
     }
 

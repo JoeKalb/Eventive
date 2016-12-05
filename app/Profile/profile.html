@@ -48,11 +48,11 @@
 								<!-- upcoming events to be setup in ng-repeat to populte events -->
 								<tr ng-repeat="event in vm.events">
 									<td>{{event.eventname}}</td>
+									<!-- remove upcoming event button -->
+									<td><button type="button" class="btn btn-default" style="float: right" ng-click="vm.removeEvent(event._id)">Remove Event</button></td>
 								</tr>
 							</table>
 							
-							<!-- remove upcoming event button -->
-							<button type="button" class="btn btn-default" style="float: right">Remove Event</button>
 						</div>
 					</div>
 				</div>
