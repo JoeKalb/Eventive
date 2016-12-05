@@ -21,6 +21,7 @@ var eventSchema = new mongoose.Schema({
 		attendeeid: mongoose.Schema.Types.ObjectId,
 		attendeename: String, 
 		attendeenumber: String, 
+		checkin: Boolean,
 		_id: false
 	}],
 }, {versionKey: false});
