@@ -12,19 +12,19 @@
 						<!-- Registration page for new users -->
 							<!-- NAME -->
 							<label>Full Name</label>
-							<input type="input" class="form-control" placeholder="Enter Full Name" ng-model="vm.name"><br>
+							<input type="text" class="form-control" placeholder="Enter Full Name" ng-model="vm.name" required><br>
 
 							<!-- PASSWORD -->
 							<label>Password</label>
-							<input type="input" class="form-control" placeholder="Enter Password" ng-model="vm.password"><br>
+							<input type="input" class="form-control" pattern=".{6}" placeholder="Enter Password" ng-model="vm.password" title="Password must contain 6 characters minimum" required><br>
 
 							<!-- EMAIL -->
 							<label>Email</label>
-							<input type="input" class="form-control" placeholder="Enter Email" ng-model="vm.email"><br>
+							<input type="email" class="form-control" placeholder="Enter Email" ng-model="vm.email" id="email" required><br>
 							
 							<!-- PHONE NUMBER -->
 							<label>Phone Number</label>
-							<input type="input" class="form-control" placeholder="Enter Phone Number" ng-model="vm.number"><br>
+							<input type="tel" class="form-control" placeholder="Enter Phone Number" ng-model="vm.number" required><br>
 				
 							<!-- Submit button to go to profile page -->
 							<button type="button" class="btn btn-default" ng-click="vm.register()">Submit</button>

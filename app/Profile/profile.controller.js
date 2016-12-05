@@ -23,4 +23,5 @@
             vm.name = storageFactory.getLocalStorage('userInfo').name;
         }
     }
+
 })();

@@ -8,9 +8,14 @@
 				<div class="panel-body">
 					<div class="row">
 						<!-- profile picture image box -->
-						<div class="col-md-6" id="picbox">picture goes here</div>
-					
-						<!-- profile information box -->
+						<div class="col-md-6" id="picbox">	
+							<form id="form1">
+								<input type='file' accept="image/*" />
+								<img id="myImg" src="#" alt="your image" />
+							</form>
+						</div>
+
+									<!-- profile information box -->
 						<div class="col-md-6">
 							<ul id="prof_info">
 								<li><p>Name: {{vm.name}}</p></li>

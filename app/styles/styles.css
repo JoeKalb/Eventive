@@ -5,7 +5,16 @@
 	#contentarea {
 		background-color: lightgrey;
 		margin: 100px 0px;
+		width: 100%;
 	}
+	
+	#aboutusbg,
+	#gallerybg,
+	#homebg {
+		width: 100%;
+		height:auto;
+	}
+
 /*ui-view styling ends*/
 
 
@@ -50,7 +59,9 @@
 	#logo {
 		padding-top: 0;
 	}
-
+	#logo .btn:focus {
+		outline: none;
+	}
 /*top navigation bar styling ends*/
 
 
@@ -123,6 +134,41 @@
 		align-content: center;
 	}
 /*profile page styling ends*/
+
+
+/*register page styling starts*/
+input[type=text],
+input[type=input],
+input[type=email],
+input[type=tel],
+input[type=password],
+textarea,
+fieldset {
+	-webkit-appearance: none;
+
+	width: 100%;
+	border: 1px solid #333;
+	margin: 0;
+
+	font-family: inherit;
+	font-size
+
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+input:invalid {
+	box-shadow: 0 0 5px 1px #ed1f7e;
+}
+
+input:focused:invalid {
+	outline: none;
+}
+
+input[type="password"] {
+	-webkit-appearance: disc !important;
+}
+/*register page styling ends*/
 
 
 /* footer navbar styling starts*/
