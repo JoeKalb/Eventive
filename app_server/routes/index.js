@@ -28,5 +28,6 @@ router.post('/events', auth, ctrlEvent.eventPost); // only for organizers
 router.put('/events/:event_id', auth, ctrlEvent.eventAddAttendee);
 router.put('/events/:event_id/remove', auth, ctrlEvent.eventRemoveAttendee);
 router.put('/events/:event_id/checkin', auth, ctrlEvent.checkInAttendee); // change checkin boolean to true
+router.get('/events/profile/:profile_id', auth, ctrlEvent.getProfileEvents);
 
 module.exports = router;

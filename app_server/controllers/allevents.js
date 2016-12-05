@@ -8,6 +8,15 @@ module.exports.eventRead = function(req, res) {
 	});
 }
 
+module.exports.getProfileEvents = function(req, res) {
+	Event.find(
+		{attendees: {$elemMatch: {attendeeid: req.params.profile_id}}}
+		, function(err, events) {
+			if (err) res.send(err);
+			else res.status(200).json(events);
+		})
+}
+
 module.exports.singleEventRead = function(req, res) {
 	Event.findById(req.params.event_id, function(err, event){
 		if (err) res.send(err);
@@ -94,3 +103,4 @@ module.exports.checkInAttendee = function(req, res) {
 			});
 	}
 }
+
