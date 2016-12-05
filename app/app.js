@@ -15,7 +15,7 @@
         			url: '/home',
     				templateUrl: 'app/HomePage/home.html',
     				controller: 'homeController',
-    				controllerAs: 'vm'
+    				controllerAs: 'vm',
         		})
 
                 .state('aboutus', {

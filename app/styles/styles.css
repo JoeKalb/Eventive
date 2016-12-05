@@ -3,18 +3,12 @@
 
 /*ui-view styling starts*/
 	#contentarea {
-		background-color: lightgrey;
 		margin: 100px 0px;
 		width: 100%;
+		color: black;
+		padding: 10px;
 	}
 	
-	#aboutusbg,
-	#gallerybg,
-	#homebg {
-		width: 100%;
-		height:auto;
-	}
-
 /*ui-view styling ends*/
 
 
