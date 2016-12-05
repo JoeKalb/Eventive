@@ -9,7 +9,8 @@
         var service = {
             getAllEvents: getAllEvents, 
             addToEvent: addToEvent,
-            getEventsByProfile: getEventsByProfile
+            getEventsByProfile: getEventsByProfile,
+            removeEventFromUser: removeEventFromUser
         };
         return service;
         ////////////////
@@ -73,6 +74,31 @@
             $http({
                 method: 'GET',
                 url: wineServer + 'events/profile/' + profileId,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                }
+            }).then(function(response) {
+                if (typeof response.data === 'object'){
+                    defer.resolve(response.data);
+                } else {
+                    defer.reject(response);
+                }
+            },
+            function(error) {
+                defer.reject(error);
+            });
+
+            return defer.promise;
+        }
+
+        function removeEventFromUser(eventId, profileId, token) {
+            var defer = $q.defer();
+
+            $http({
+                method: 'PUT',
+                url: wineServer + 'events/' + eventId + '/remove',
+                data: {"attendeeid": profileId},
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + token
