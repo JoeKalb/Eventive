@@ -18,8 +18,11 @@ var eventSchema = new mongoose.Schema({
 		required: true
 	},
 	attendees: [{
-		type: mongoose.Schema.Types.ObjectId,
-		required: false
+		attendeeid: mongoose.Schema.Types.ObjectId,
+		attendeename: String, 
+		attendeenumber: String, 
+		checkin: Boolean,
+		_id: false
 	}],
 }, {versionKey: false});
 
