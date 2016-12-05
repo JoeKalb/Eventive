@@ -1,10 +1,18 @@
 <div ui-view></div>
 
+<style id="bkgrd">
+	body {
+		background-image: url("../app/styles/pictures/artgirl.jpg");
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+</style>
+
 <div class="container" id="login_box">
 	<div class="panel-group">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h1>Registration</h1>
+				<h2>Registration</h2>
 				<div class="panel-body">
 					<form name="userForm" ng-submit="submitForm()"> 
 						<div class="form-group">
