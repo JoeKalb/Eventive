@@ -19,8 +19,10 @@ var eventSchema = new mongoose.Schema({
 	},
 	attendees: [{
 		attendeeid: mongoose.Schema.Types.ObjectId,
-		attendeename: String
-	}, { _id : false }],
+		attendeename: String, 
+		attendeenumber: String, 
+		_id: false
+	}],
 }, {versionKey: false});
 
 mongoose.model('Event', eventSchema);

@@ -26,6 +26,6 @@ router.get('/events', ctrlEvent.eventRead);
 router.get('/events/:event_id', ctrlEvent.singleEventRead);
 router.post('/events', auth, ctrlEvent.eventPost); // only for organizers
 router.put('/events/:event_id', auth, ctrlEvent.eventAddAttendee);
-router.put('/events/:event_id/remove', auth, ctrlEvent.eventRemoveAttendee);
+router.put('/events/:event_id/remove', auth, ctrlEvent.eventRemoveAttendee); 
 
 module.exports = router;
