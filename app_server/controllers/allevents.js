@@ -38,6 +38,7 @@ module.exports.eventPost = function(req, res) {
 
 	event.eventname = req.body.eventname;
 	event.companyname = req.body.companyname;
+	event.companyid = req.body.companyid;
 	event.datetime = req.body.datetime;
 	event.address = req.body.address;
 
@@ -45,6 +46,19 @@ module.exports.eventPost = function(req, res) {
 		if (err) res.send(err);
 		else res.status(200).json(event);
 	});
+}
+
+module.exports.editEvent = function(req, res) {
+	Event.findById(req.params.event_id, function(err, event){
+		event.eventname = req.body.eventname;
+		event.address = req.body.address;
+		event.datetime = req.body.datetime;
+
+		event.save(function(err) {
+			if(err) res.send(err);
+			else res.status(200).json(event);
+		})
+	})
 }
 
 module.exports.eventAddAttendee = function(req, res) {
@@ -88,6 +102,7 @@ module.exports.eventRemoveAttendee = function(req, res) {
 		});
 	}
 }
+
 
 module.exports.checkInAttendee = function(req, res) {
 	if (!req.params.event_id) {
