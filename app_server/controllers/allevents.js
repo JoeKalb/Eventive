@@ -96,7 +96,6 @@ module.exports.eventRemoveAttendee = function(req, res) {
 			}
 
 
-
 			event.save(function(err) {
 				if (err) res.send(err);
 				res.status(200).json(event);
