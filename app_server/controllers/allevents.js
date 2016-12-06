@@ -38,6 +38,7 @@ module.exports.eventPost = function(req, res) {
 
 	event.eventname = req.body.eventname;
 	event.companyname = req.body.companyname;
+	event.companyid = req.body.companyid;
 	event.datetime = req.body.datetime;
 	event.address = req.body.address;
 
@@ -101,6 +102,7 @@ module.exports.eventRemoveAttendee = function(req, res) {
 		});
 	}
 }
+
 
 module.exports.checkInAttendee = function(req, res) {
 	if (!req.params.event_id) {

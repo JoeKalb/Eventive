@@ -2,7 +2,7 @@
     'use strict';
     var app = angular
         .module('app', [
-            'ui.router', 'toastr', 'LocalStorageModule'
+            'ui.router', 'toastr', 'LocalStorageModule', 'uiGmapgoogle-maps'
         ]);
 
         app.value ('wineServer', 'http://localhost:3000/api/');
