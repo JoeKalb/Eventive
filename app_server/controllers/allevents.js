@@ -91,7 +91,7 @@ module.exports.eventRemoveAttendee = function(req, res) {
 				if (event.attendees[i].attendeeid.toString() === req.body.attendeeid){
 					console.log("Removing id: " + i);
 					event.attendees.splice(i, 1);
-					//i = len; 
+					i = len; 
 				} 
 			}
 
