@@ -47,6 +47,19 @@ module.exports.eventPost = function(req, res) {
 	});
 }
 
+module.exports.editEvent = function(req, res) {
+	Event.findById(req.params.event_id, function(err, event){
+		event.eventname = req.body.eventname;
+		event.address = req.body.address;
+		event.datetime = req.body.datetime;
+
+		event.save(function(err) {
+			if(err) res.send(err);
+			else res.status(200).json(event);
+		})
+	})
+}
+
 module.exports.eventAddAttendee = function(req, res) {
 	if (!req.params.event_id) {
 		res.status(404).json({
