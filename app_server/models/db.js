@@ -5,7 +5,7 @@ var dbURI = 'mongodb://admin:pass1@ds115738.mlab.com:15738/wineandpaint';
 if (process.env.NODE_ENV === 'production') {
 	dbURI = process.env.MONGOLAB_URI
 }
-
+console.log(dbURI);
 mongoose.connect(dbURI);
 
 // Connection events
