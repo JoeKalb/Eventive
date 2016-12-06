@@ -53,6 +53,13 @@
     				controllerAs: 'vm'
         		})
 
+                .state('organizer', {
+                    url: '/organizer',
+                    templateUrl: 'app/Profile/organizer.html',
+                    controller: 'organizerController',
+                    contollerAs: 'vm'
+                })
+
         		.state('register', {
         			url: '/register',
     				templateUrl: 'app/Authentication/register.html',

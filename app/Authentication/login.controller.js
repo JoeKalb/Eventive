@@ -42,12 +42,14 @@
                     console.log(token);
                     AuthFactory.getProfile(token).then(
                         function(response){
+
                             console.log(response); // grabs profile
 
                             setStorage('userInfo', response);
                             setStorage('token', token);
-                            $state.go("profile")
-                        })
+                            if (response.role === "attendee") $state.go("profile");
+                            else $state.go("organizer");
+                        });
                 },
                 function (error) {
                     toastr.error('Please register an account');
