@@ -1,6 +1,14 @@
 /*Styling broken down in sections*/
 
 
+/*media queries starts*/
+/*	body {
+		width: 1680px;
+	}
+*/
+/*media queries ends*/
+
+
 /*ui-view styling starts*/
 	#contentarea {
 		margin: 100px 0px;
@@ -28,6 +36,7 @@
 		padding-top: 0;
 		height: 100px;
 		background-color: white;
+		max-height: 100px;
 	}
 
 	#btn {
@@ -43,7 +52,8 @@
 	   outline: none !important;
 	}
 
-	#btn:focus {
+	#btn:focus,
+	#btn:active {
 		color: #ed1f7e !important;
 		font-size: 25px;
 		font-variant: small-caps;
@@ -55,6 +65,8 @@
 	}
 
 	#logo {
+		width:190px;
+		height:100px;
 		padding-top: 0;
 	}
 	#logo .btn:focus {
@@ -174,6 +186,7 @@
 	#navbar_bot {
 		height: 100px;
 		background-color: white;
+		max-height: 100px;
 	}
 	
 	/*trademark logo*/
