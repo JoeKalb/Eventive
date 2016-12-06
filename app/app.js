@@ -57,7 +57,7 @@
                     url: '/organizer',
                     templateUrl: 'app/Profile/organizer.html',
                     controller: 'organizerController',
-                    contollerAs: 'vm'
+                    controllerAs: 'vm'
                 })
 
         		.state('register', {

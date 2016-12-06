@@ -17,6 +17,15 @@ module.exports.getProfileEvents = function(req, res) {
 		})
 }
 
+module.exports.getCompanyEvents = function(req, res) {
+	Event.find(
+		{companyid: req.params.company_id}
+		, function(err, events) {
+			if (err) res.send(err);
+			else res.status(200).json(events);
+		})
+}
+
 module.exports.singleEventRead = function(req, res) {
 	Event.findById(req.params.event_id, function(err, event){
 		if (err) res.send(err);
