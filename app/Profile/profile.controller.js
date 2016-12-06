@@ -11,7 +11,7 @@
     function profileController(toastr, storageFactory, EventsFactory, $state, $stateParams) {
         var vm = this;
         vm.title = 'profileController';
-        vm.removeEvent;
+ 
         activate();
 
         ////////////////
