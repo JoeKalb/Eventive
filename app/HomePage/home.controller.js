@@ -5,10 +5,10 @@
         .module('app')
         .controller('homeController', homeController);
 
-    homeController.$inject = ['dependencies'];
+    homeController.$inject = ['toastr'];
     
     /* @ngInject */
-    function homeController(dependencies) {
+    function homeController(toastr) {
         var vm = this;
         vm.title = 'homeController';
 
@@ -19,4 +19,5 @@
         function activate() {
         }
     }
+
 })();

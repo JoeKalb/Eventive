@@ -1,0 +1,184 @@
+/*Styling broken down in sections*/
+
+
+/*ui-view styling starts*/
+	#contentarea {
+		margin: 100px 0px;
+		width: 100%;
+		color: black;
+		padding: 10px;
+	}
+
+	h1 {
+		color: white;
+	}
+
+/*ui-view styling ends*/
+
+
+/*home screen styling starts*/
+	/*background image*/
+
+
+/*home screen styling ends*/
+
+
+/*top navigation bar styling starts*/
+	#navbar_top {
+		padding-top: 0;
+		height: 100px;
+		background-color: white;
+	}
+
+	#btn {
+		float: right;
+		padding: 35px 25px;
+		font-weight: bold;
+		text-decoration: none;
+		color: black;
+	}
+
+	.btn:focus,
+	.btn:active {
+	   outline: none !important;
+	}
+
+	#btn:focus {
+		color: #ed1f7e !important;
+		font-size: 25px;
+		font-variant: small-caps;
+		transition-duration: .3s;
+	}
+
+	#btnnav .btn:hover {
+	   color: #ed1f7e !important;
+	}
+
+	#logo {
+		padding-top: 0;
+	}
+	#logo .btn:focus {
+		outline: none;
+	}
+/*top navigation bar styling ends*/
+
+
+/*upcoming evnts page styling starts*/
+	#uevents_box {
+		width: auto;
+		height: 250px;
+		padding: 30px;
+		border: 5px solid gray;
+		margin: 0;
+		list-style-type: none;
+	}
+
+	#uevents_items {
+		margin: auto;
+		width: 100%;
+		padding: 0px 30px;
+	}
+/*upcomign events page styling ends*/
+
+
+/*login page styling starts*/
+	/*login box*/
+	#login_box {
+		padding-top: 70px;
+	}
+/*login page styling ends*/
+
+
+/*profile page styling starts*/
+	/*profile picture box*/
+	#picbox {
+		width: 250px;
+		height: 250px;
+		padding: 10px;
+		border: 5px solid gray;
+		margin: 0;
+		overflow-y: auto;
+	}
+
+	/*profile information box*/
+	#prof_info {
+		width: 500px;
+		height: 250px;
+		padding: 10px;
+		border: 5px solid gray;
+		margin: 0;
+		list-style-type: none;
+	}
+
+	/*upcoming events box*/
+	#pevents_box {
+		width: 765px;
+		height: auto;
+		padding: 10px;
+		border: 5px solid gray;
+		margin: 0;
+	}
+
+	#pevents_table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	#pevents_table td:hover {
+		background-color: #ed1f7e;
+	}
+
+	#profile_body {
+		align-content: center;
+	}
+/*profile page styling ends*/
+
+
+/*register page styling starts*/
+	input[type=text],
+	input[type=input],
+	input[type=email],
+	input[type=tel],
+	input[type=password],
+	textarea,
+	fieldset {
+		-webkit-appearance: none;
+
+		width: 100%;
+		border: 1px solid #333;
+		margin: 0;
+
+		font-family: inherit;
+		font-size
+
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	input:invalid {
+		box-shadow: 0 0 5px 1px #ed1f7e;
+	}
+
+	input:focused:invalid {
+		outline: none;
+	}
+
+	input[type="password"] {
+		-webkit-appearance: disc !important;
+	}
+/*register page styling ends*/
+
+
+/* footer navbar styling starts*/
+	/*navigation bar at footer*/
+	#navbar_bot {
+		height: 100px;
+		background-color: white;
+	}
+	
+	/*trademark logo*/
+	h5 {
+		padding-top: 35px;
+		text-align: center;
+	}
+/* footer navbar styling ends*/

@@ -1,0 +1,37 @@
+<div ui-view></div>
+
+<style>
+	body {
+		background-image: url("../app/styles/pictures/bigsplash5.jpg");
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+</style>
+
+<div class="container" id="login_box">
+	<div class="panel-group">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h2>Login</h2>
+				<div class="panel-body">
+					<form>
+						<div class="form-group">
+
+							<!-- Input fields for user name and password -->
+							<label>Email</label>
+							<input type="input" class="form-control" placeholder="Enter Email" ng-model="vm.email" required><br>
+							<label>Password</label>
+							<input type="password" class="form-control" placeholder="Enter Password" ng-model="vm.password" required><br>
+
+							<!-- Login button to go to profile page -->
+							<button type="button" class="btn btn-default" ng-click="vm.login()" value="reset form">Login</button><br>
+
+							<!-- Link to register page if not member -->
+							<p>Not a member <a ui-sref="register">sign up!</a></p>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

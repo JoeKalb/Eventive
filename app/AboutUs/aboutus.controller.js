@@ -3,14 +3,14 @@
 
     angular
         .module('app')
-        .controller('loginController', loginController);
+        .controller('aboutUsController', aboutUsController);
 
-    loginController.$inject = ['dependencies'];
+    aboutUsController.$inject = ['toastr'];
     
     /* @ngInject */
-    function loginController(dependencies) {
+    function aboutUsController(toastr) {
         var vm = this;
-        vm.title = 'loginController';
+        vm.title = 'aboutUsController';
 
         activate();
 

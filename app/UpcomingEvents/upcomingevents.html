@@ -1,0 +1,35 @@
+<div ui-view></div>
+
+<style>
+	body {
+		background-image: url("../app/styles/pictures/bigsplash3.jpg");
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+</style>
+
+<div>
+	<h1>Upcoming Events Page</h1>
+</div>
+<div class="container">
+	<div class="panel-group>">
+		<div class="panel panel-default" ng-repeat="event in vm.events">
+			<div class="panel-body">
+				<div class="form-group">
+					<!-- panel of upcoming events for people to see -->
+					<div class="col-md-8" id="uevents_items">
+						<h4>This Week</h4>
+						<ul id="uevents_box">
+							<li><p><b>Company Name:</b> {{event.companyname}}</p></li>
+							<li><p><b>Event Name:</b> {{event.eventname}}</p></li>
+							<li><p><b>Address:</b> {{event.address}}</p></li>
+							<li><p><b>Date:</b> {{event.datetime | date : "medium"}}</p></li>
+						</ul>
+						<!-- edit profile button -->
+						<button type="button" class="btn btn-default" style="float: right" ng-click="vm.addToEvent(event._id)">Sign Up Now!</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

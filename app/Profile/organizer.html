@@ -12,25 +12,25 @@
 	<div class="panel-group">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h2>{{vm.name}}'s Page</h2>
+				<h2>{{vm.name}} Page</h2>
 				<div class="panel-body">
 					<div class="row">
 						<!-- profile picture image box -->
-						<div class="col-md-6" id="picbox">	
+						<div class="col-md-6" id="picbox">
 							<form id="form1">
 								<input type='file' accept="image/*" />
 								<img id="myImg" src="#" alt="your image" />
 							</form>
 						</div>
-
-									<!-- profile information box -->
+					
+						<!-- profile information box -->
 						<div class="col-md-6">
 							<ul id="prof_info">
 								<li><p>Name: {{vm.name}}</p></li>
 								<li><p>Email: {{vm.email}}</p></li>
 								<li><p>Phone Number: {{vm.number}}</p></li>
 								<!-- edit profile button -->
-								<button type="button" class="btn btn-default" style="float: right">Edit Information</button>
+								<button type="button" class="btn btn-default" style="float: right">Edit</button>
 							</ul>
 						</div>
 					</div>
@@ -53,6 +53,7 @@
 								</tr>
 							</table>
 							
+							
 						</div>
 					</div>
 				</div>
@@ -60,3 +61,4 @@
 		</div>
 	</div>
 </div>
+

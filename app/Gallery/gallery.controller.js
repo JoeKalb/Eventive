@@ -3,14 +3,14 @@
 
     angular
         .module('app')
-        .controller('registerController', registerController);
+        .controller('galleryController', galleryController);
 
-    registerController.$inject = ['dependencies'];
+    galleryController.$inject = ['toastr'];
     
     /* @ngInject */
-    function registerController(dependencies) {
+    function galleryController(toastr) {
         var vm = this;
-        vm.title = 'registerController';
+        vm.title = 'galleryController';
 
         activate();
 

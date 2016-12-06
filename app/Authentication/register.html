@@ -1,0 +1,45 @@
+<div ui-view></div>
+
+<style>
+	body {
+		background-image: url("../app/styles/pictures/artgirl.jpg");
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+</style>
+
+<div class="container" id="login_box">
+	<div class="panel-group">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h2>Registration</h2>
+				<div class="panel-body">
+					<form name="userForm" ng-submit="submitForm()"> 
+						<div class="form-group">
+
+						<!-- Registration page for new users -->
+							<!-- NAME -->
+							<label>Full Name</label>
+							<input type="text" class="form-control" placeholder="Enter Full Name" ng-model="vm.name" required><br>
+
+							<!-- PASSWORD -->
+							<label>Password</label>
+							<input type="input" class="form-control" pattern=".{6}" placeholder="Enter Password" ng-model="vm.password" required><br>
+
+							<!-- EMAIL -->
+							<label>Email</label>
+							<input type="email" class="form-control" placeholder="Enter Email" ng-model="vm.email" id="email" required><br>
+							
+							<!-- PHONE NUMBER -->
+							<label>Phone Number</label>
+							<input type="tel" class="form-control" placeholder="Enter Phone Number" ng-model="vm.number" required><br>
+				
+							<!-- Submit button to go to profile page -->
+							<button type="button" class="btn btn-default" ng-click="vm.register()">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

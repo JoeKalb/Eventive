@@ -2,10 +2,11 @@
 <html lang="en" ng-app="app">
 <head>
   <meta charset="UTF-8">
-  <title>Gulp Demo</title>
+  <title>Wine And Paint</title>
 <!-- bower:css -->
 <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
-<link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.css" />
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="bower_components/animate.css/animate.css" />
 <!-- endbower -->
 
 <!-- inject:css -->
@@ -14,21 +15,67 @@
 </head>
 
 <body>
+	<!-- static top navigation bar -->
+	<header>
+		<div class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar_top">
+			<div class="container">
+		  		<div>
+		  			<img src="../app/styles/pictures/wpalogo250.png" style="width:190px;height:100px" id="logo" ui-sref="home">
+		    		<ul class="nav navbar-nav navbar-right" id="btnnav">
+						<li><button id="btn" type="button" class="btn btn-link" ui-sref="home">HOME</li>
+						<li><button id="btn" type="button" class="btn btn-link" ui-sref="aboutus">ABOUT US</li>
+						<li><button id="btn" type="button" class="btn btn-link" ui-sref="upcomingevents">UPCOMING EVENTS</li>
+						<li><button id="btn" type="button" class="btn btn-link" ui-sref="gallery">GALLERY</li>
+						<li><button id="btn" type="button" class="btn btn-link" ui-sref="login">SIGN UP</li>
+		     		</ul>
+		   		</div>
+		 	</div>
+		</div> 
+	</header>
+	<!-- ui view for different states in the web app -->
+	<section id="contentarea">
+		<div ui-view></div>
+	</section>
 
-<div ui-view></div>
+	<footer>
+		<div class="navbar navbar-default navbar-fixed-bottom" role="navigation" id="navbar_bot">
+			<div class="container">
+				<div>
+					<h5><b>&#174; JJ STUDIOS</b></h5>
+				</div>
+			</div>
+		</div>
+	</footer>
+<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
 <!-- bower:js -->
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-messages/angular-messages.js"></script>
 <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
-<script src="bower_components/lodash/dist/lodash.compat.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
 <script src="bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+<script src="bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+<script src="bower_components/markerclustererplus/src/markerclusterer.js"></script>
+<script src="bower_components/google-maps-utility-library-v3-markerwithlabel/dist/markerwithlabel.js"></script>
+<script src="bower_components/google-maps-utility-library-v3-infobox/dist/infobox.js"></script>
+<script src="bower_components/google-maps-utility-library-v3-keydragzoom/dist/keydragzoom.js"></script>
+<script src="bower_components/js-rich-marker/src/richmarker.js"></script>
+<script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
 <!-- endbower -->
 
 <!-- inject:js -->
+<script src="/app/app.js"></script>
 <!-- endinject -->
+<script src="/app/HomePage/home.controller.js"></script>
+<script src="/app/Authentication/login.controller.js"></script>
+<script src="/app/Profile/profile.controller.js"></script>
+<script src="/app/Authentication/register.controller.js"></script>
+<script src="/app/Authentication/auth.factory.js"></script>
+<script src="/app/Authentication/storage.factory.js"></script>
+<script src="/app/UpcomingEvents/upcomingevents.controller.js"></script>
+<script src="/app/UpcomingEvents/upcomingevents.factory.js"></script>
+<script src="/app/Profile/organizer.controller.js"></script>
 </body>
 </html>
