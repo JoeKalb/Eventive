@@ -127,4 +127,3 @@ module.exports.checkInAttendee = function(req, res) {
 			});
 	}
 }
-
