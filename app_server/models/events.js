@@ -9,6 +9,10 @@ var eventSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
+	companyid: {
+		type: mongoose.Schema.Types.ObjectId,
+		required: false
+	},
 	datetime: {
 		type: Date,
 		required: true

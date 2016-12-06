@@ -23,7 +23,15 @@
             vm.name = storageFactory.getLocalStorage('userInfo').name;
             vm.id = storageFactory.getLocalStorage('userInfo')._id;
             vm.token = storageFactory.getLocalStorage('token');
-            console.log(vm.email);
+
+            EventsFactory.getEventsCompany(vm.id, vm.token).then(
+                function(response) {
+                    vm.events = response;
+                    console.log(vm.events);
+                },
+                function(error) {
+                    toastr.error("Something went wrong in the profile controller.")
+                })
         }
     }
 })();
