@@ -15,11 +15,30 @@
 </head>
 
 <body>
-	<!-- static top navigation bar -->
 	<header>
+	
+		<nav>
+		<!-- <div class="navbar navbar-default navbar-fixed-top row" id="navbar_top"> -->
+			<img src="../app/styles/pictures/wpalogo250.png" id="logo" ui-sref="home">
+				<ul>
+					<a ui-sref="home" id="btn"><li>HOME</li></a>
+					<a ui-sref="aboutus" id="btn"><li>ABOUT US</li></a>
+					<a ui-sref="upcomingevents" id="btn"><li>UPCOMING EVENTS</li></a>
+					<a ui-sref="gallery" id="btn"><li>GALLERY</li></a>
+					<a ui-sref="login" id="btn"><li>SIGN UP</li></a>
+				</ul>
+				<div class="handle">MENU</div>
+			</nav>
+		</div>
+	</header>
+
+
+	<!-- static top navigation bar -->
+<!-- 	<header>
 		<div class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar_top">
 			<div class="container" id="viewContainer">
-		  		<div>
+				<nav class="nav">
+
 		  			<img src="../app/styles/pictures/wpalogo250.png" id="logo" ui-sref="home">
 		    		<ul class="nav navbar-nav navbar-right" id="btnnav">
 						<li><button id="btn" type="button" class="btn btn-link" ui-sref="home">HOME</li>
@@ -28,10 +47,11 @@
 						<li><button id="btn" type="button" class="btn btn-link" ui-sref="gallery">GALLERY</li>
 						<li><button id="btn" type="button" class="btn btn-link" ui-sref="login">SIGN UP</li>
 		     		</ul>
-		   		</div>
+		   		</nav>
 		 	</div>
 		</div> 
-	</header>
+	</header> -->
+
 	<!-- ui view for different states in the web app -->
 	<section id="contentarea">
 		<div ui-view></div>
@@ -67,6 +87,7 @@
 
 <!-- inject:js -->
 <script src="/app/app.js"></script>
+<script src="/app/navigation.js"></script>
 <!-- endinject -->
 <script src="/app/HomePage/home.controller.js"></script>
 <script src="/app/Authentication/login.controller.js"></script>

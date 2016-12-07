@@ -1,11 +1,79 @@
 /*Styling broken down in sections*/
 
+	.panel-default {
+		opacity: 0.9;
+		box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.9);
+	}
 
 /*media queries starts*/
-/*	body {
-		width: 1680px;
+	/*nav bar to dropdown styling*/
+	body {
+		margin: 0;
+		padding: 0;
+		font-family: sans-serif;
 	}
-*/
+	header {
+		background: white;
+		width: 100%;
+		color: white;
+	}
+	a {
+		text-decoration: none !important;
+		color: black;
+	}
+	nav ul {
+		background-color: none;
+		overflow: hidden;
+		color: white;
+		padding: 0;
+		text-align: center;
+		margin: 0;
+		-webkit-transition: max-height 0.4s;
+		-ms-transition: max-height 0.4s;
+		-moz-transition: max-height 0.4s;
+		-o-transition: max-height 0.4s;
+		transition: max-height 0.4s;
+	}
+	nav ul li {
+		display: inline-block;
+		padding: 20px;
+	}
+	section {
+		line-height: 1.5em;
+		font-size: 0.9em;
+		padding: 40px;
+		width: 75%;
+		margin: 0;
+	}
+	.handle {
+		width: 100%;
+		background: #ed1f7e;
+		text-align: left;
+		box-sizing: border-box;
+		padding: 10px 10px;
+		cursor: pointer;
+		color: white;
+		display: none;
+	}
+	@media screen and (max-width: 1224px){
+		nav ul {
+			max-height: 0;
+		}
+		.showing {
+			max-height: 20em;
+		}
+		nav ul li {
+			background: #f589bc;
+			box-sizing: border-box;
+			width: 100%;
+			padding: 10px;
+			text-align: left;
+			color: white;
+		}
+		.handle {
+			display: block;
+		}
+	}
 /*media queries ends*/
 
 
@@ -16,57 +84,37 @@
 		color: black;
 		padding: 10px;
 	}
-
-	h1 {
-		color: white;
-	}
-
 /*ui-view styling ends*/
 
 
 /*home screen styling starts*/
-	/*background image*/
-
-
 /*home screen styling ends*/
 
 
 /*top navigation bar styling starts*/
 	#navbar_top {
-		padding-top: 0;
+		padding: 0;
 		height: 100px;
 		background-color: white;
-		max-height: 100px;
+		max-height: 80px;
 	}
-
 	#btn {
-		float: right;
-		padding: 35px 25px;
 		font-weight: bold;
 		text-decoration: none;
 		color: black;
 	}
-
-	.btn:focus,
-	.btn:active {
-	   outline: none !important;
-	}
-
 	#btn:focus,
-	#btn:active {
+	#btn:active,
+	#btn:hover {
+		background-color: none !important;
 		color: #ed1f7e !important;
-		font-size: 25px;
+		font-size: 150%;
 		font-variant: small-caps;
 		transition-duration: .3s;
 	}
-
-	#btnnav .btn:hover {
-	   color: #ed1f7e !important;
-	}
-
 	#logo {
-		width:190px;
-		height:100px;
+		width:170px;
+		height:80px;
 		padding-top: 0;
 	}
 	#logo .btn:focus {
@@ -84,7 +132,6 @@
 		margin: 0;
 		list-style-type: none;
 	}
-
 	#uevents_items {
 		margin: auto;
 		width: 100%;
@@ -95,7 +142,7 @@
 
 /*login page styling starts*/
 	/*login box*/
-	#login_box {
+	#loginContainer {
 		padding-top: 70px;
 	}
 /*login page styling ends*/
@@ -111,7 +158,6 @@
 		margin: 0;
 		overflow-y: auto;
 	}
-
 	/*profile information box*/
 	#prof_info {
 		width: 500px;
@@ -121,7 +167,6 @@
 		margin: 0;
 		list-style-type: none;
 	}
-
 	/*upcoming events box*/
 	#pevents_box {
 		width: 765px;
@@ -130,16 +175,13 @@
 		border: 5px solid gray;
 		margin: 0;
 	}
-
 	#pevents_table {
 		width: 100%;
 		border-collapse: collapse;
 	}
-
 	#pevents_table td:hover {
 		background-color: #ed1f7e;
 	}
-
 	#profile_body {
 		align-content: center;
 	}
@@ -155,26 +197,20 @@
 	textarea,
 	fieldset {
 		-webkit-appearance: none;
-
 		width: 100%;
 		border: 1px solid #333;
 		margin: 0;
-
 		font-family: inherit;
 		font-size
-
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 	}
-
 	input:invalid {
 		box-shadow: 0 0 5px 1px #ed1f7e;
 	}
-
 	input:focused:invalid {
 		outline: none;
 	}
-
 	input[type="password"] {
 		-webkit-appearance: disc !important;
 	}
@@ -186,9 +222,8 @@
 	#navbar_bot {
 		height: 100px;
 		background-color: white;
-		max-height: 100px;
+		max-height: 80px;
 	}
-	
 	/*trademark logo*/
 	h5 {
 		padding-top: 35px;
