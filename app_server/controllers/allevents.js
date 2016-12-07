@@ -41,6 +41,8 @@ module.exports.eventPost = function(req, res) {
 	event.companyid = req.body.companyid;
 	event.datetime = req.body.datetime;
 	event.address = req.body.address;
+	event.long = req.body.long;
+	event.lat = req.body.lat;
 
 	event.save(function(err) {
 		if (err) res.send(err);
@@ -95,6 +97,7 @@ module.exports.eventRemoveAttendee = function(req, res) {
 				} 
 			}
 
+
 			event.save(function(err) {
 				if (err) res.send(err);
 				res.status(200).json(event);
@@ -127,4 +130,3 @@ module.exports.checkInAttendee = function(req, res) {
 			});
 	}
 }
-

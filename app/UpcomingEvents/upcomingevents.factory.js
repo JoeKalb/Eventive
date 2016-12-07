@@ -11,10 +11,38 @@
             addToEvent: addToEvent,
             getEventsByProfile: getEventsByProfile,
             removeEventFromUser: removeEventFromUser,
-            getEventsCompany: getEventsCompany
+            getEventsCompany: getEventsCompany,
+            getCoordFromAddress: getCoordFromAddress
         };
         return service;
+        
         ////////////////
+        function getCoordFromAddress(address) {
+            var defer = $q.defer();
+
+            address = address.replace(" ", "+");
+            $http({
+                method: 'GET',
+                url: 'https://maps.googleapis.com/maps/api/geocode/json?', 
+                params: {
+                    'address': address,
+                    'key': 'AIzaSyCPOECad0LFOA3TApLW1vhYdpXLoncSHPI'
+                }
+            }).then(function(response) {
+                if (typeof response.data === 'object'){
+                    defer.resolve(response.data);
+                } else {
+                    defer.reject(response);
+                }
+            }, 
+            function(error) {
+                defer.reject(error);
+            });
+            
+            return defer.promise;
+
+        }
+
         function getAllEvents() {
         	var defer = $q.defer();
 
@@ -127,6 +155,40 @@
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + token
+                }
+            }).then(function(response) {
+                if (typeof response.data === 'object'){
+                    defer.resolve(response.data);
+                } else {
+                    defer.reject(response);
+                }
+            },
+            function(error) {
+                defer.reject(error);
+            });
+
+            return defer.promise;
+        }
+
+        function addEvent(eventName, companyName, companyid, datetime, address, token) {
+            var coord = getCoordFromAddress(address);
+            var defer = $q.defer();
+
+            $http({
+                method: 'POST',
+                url: wineServer + '/events',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                },
+                data: {
+                    'eventname': eventName,
+                    'companyname': companyName,
+                    'companyid': companyid,
+                    'datetime': datetime,
+                    'address': address,
+                    'long': coord.results.geometry.location.lng,
+                    'lat': coord.results.geometry.location.lat
                 }
             }).then(function(response) {
                 if (typeof response.data === 'object'){

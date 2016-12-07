@@ -2,7 +2,10 @@
     'use strict';
     var app = angular
         .module('app', [
-            'ui.router', 'toastr', 'LocalStorageModule', 'uiGmapgoogle-maps'
+            'ui.router', 
+            'toastr', 
+            'LocalStorageModule', 
+            'uiGmapgoogle-maps'
         ]);
 
         app.value ('wineServer', 'https://appventful.herokuapp.com/api/');
@@ -67,6 +70,12 @@
     				controllerAs: 'vm'
         		})
 
+        }]);
+
+        app.config(['uiGmapGoogleMapApiProvider', function(uiGmapGoogleMapApiProvider) {
+            uiGmapGoogleMapApiProvider.configure({
+                key: 'AIzaSyBmXju8CHIaQIDu3DJIbrfj2oknuJhnNT4'
+            });
         }]);
 
 })();
