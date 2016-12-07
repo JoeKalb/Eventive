@@ -21,6 +21,14 @@ var eventSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
+	long: {
+		type: String,
+		required: true
+	},
+	lat: {
+		type: String,
+		required: true
+	}
 	attendees: [{
 		attendeeid: mongoose.Schema.Types.ObjectId,
 		attendeename: String, 

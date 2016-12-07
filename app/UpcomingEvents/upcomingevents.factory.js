@@ -11,10 +11,40 @@
             addToEvent: addToEvent,
             getEventsByProfile: getEventsByProfile,
             removeEventFromUser: removeEventFromUser,
-            getEventsCompany: getEventsCompany
+            getEventsCompany: getEventsCompany,
+            getCoordFromAddress: getCoordFromAddress
         };
         return service;
+        var long;
+        var lat;
         ////////////////
+        function getCoordFromAddress(address) {
+            var defer = $q.defer();
+
+            address = address.replace(" ", "+");
+            $http({
+                method: 'GET',
+                url: 'https://maps.googleapis.com/maps/api/geocode/json?', 
+                params: {
+                    'address': address,
+                    'key': 'AIzaSyCPOECad0LFOA3TApLW1vhYdpXLoncSHPI'
+                }
+            }).then(function(response) {
+                if (typeof response.data === 'object'){
+                    defer.resolve(response.data);
+                } else {
+                    defer.reject(response);
+                }
+            }, 
+            function(error) {
+                defer.reject(error);
+            });
+            lat = defer.promise.results.geometry.location.lat;
+            long = defer.promise.results.geometry.location.lng;
+            return defer.promise;
+
+        }
+
         function getAllEvents() {
         	var defer = $q.defer();
 
