@@ -11,7 +11,7 @@
     function upcomingEventsController(toastr, EventsFactory, storageFactory) {
         var vm = this;
         vm.title = 'upcomingEventsController';
-
+        vm.events;
         activate();
 
         ////////////////
@@ -41,6 +41,6 @@
                 })
         }
 
-        vm.map = { center: { latitude: 32.716851, longitude:  -117.165237 }, zoom: 15 };
+        vm.map = { center: { latitude: 32.716851, longitude:  -117.165237 }, zoom: 14 };
     }
 })();
