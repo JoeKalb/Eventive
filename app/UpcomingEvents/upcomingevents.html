@@ -26,12 +26,14 @@
 							<li><p><b>Address:</b> {{event.address}}</p></li>
 							<li><p><b>Date:</b> {{event.datetime | date : "medium"}}</p></li>
 						</ul>
+						<ui-gmap-google-map center='vm.map.center' zoom='vm.map.zoom'></ui-gmap-google-map>
 						<!-- edit profile button -->
 						<button type="button" class="btn btn-default" style="float: right" ng-click="vm.addToEvent(event._id)">Sign Up Now!</button>
 					</div>
+
 				</div>
+				
 			</div>
 		</div>
-		<ui-gmap-google-map center='vm.map.center' zoom='vm.map.zoom'></ui-gmap-google-map>
 	</div>
 </div>

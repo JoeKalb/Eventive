@@ -33,5 +33,15 @@
                     toastr.error("Something went wrong in the profile controller.")
                 })
         }
+
+        vm.postNewEvent = function(eventName, companyName, companyid, datetime, address, token) {
+            EventsFactory.addEvent(eventName, companyName, companyid, datetime, address, token).then(
+                function(response) {
+                    console.log('New Event Posted: ' + response);
+                },
+                function(error) {
+                    toastr.error('Problem posting the event');
+                })
+        }
     }
 })();
