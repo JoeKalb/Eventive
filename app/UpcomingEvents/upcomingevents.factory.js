@@ -13,7 +13,8 @@
             removeEventFromUser: removeEventFromUser,
             getEventsCompany: getEventsCompany,
             getCoordFromAddress: getCoordFromAddress,
-            addEvent: addEvent
+            addEvent: addEvent,
+            removeEvent: removeEvent
         };
         return service;
         
@@ -193,6 +194,30 @@
                     'address': address,
                     'long': long,
                     'lat': lat
+                }
+            }).then(function(response) {
+                if (typeof response.data === 'object'){
+                    defer.resolve(response.data);
+                } else {
+                    defer.reject(response);
+                }
+            },
+            function(error) {
+                defer.reject(error);
+            });
+            
+            return defer.promise;
+        }
+
+        function removeEvent(eventId, token) {
+            var defer = $q.defer();
+
+            $http({
+                method: 'DELETE',
+                url: wineServer + 'events/' + eventId,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
                 }
             }).then(function(response) {
                 if (typeof response.data === 'object'){

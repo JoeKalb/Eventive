@@ -55,7 +55,15 @@
                 function(error) {
                     toastr.error("We couldn't figure out this address")
                 });
-            
+        }
+        vm.deleteEvent = function(eventId, token) {
+            EventsFactory.removeEvent(eventId, token).then(
+                function(response) {
+                    console.log(response);
+                },
+                function(error) {
+                    toastr.error("There was a problem deleting this event");
+                });
         }
     }
 })();

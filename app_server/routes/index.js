@@ -33,5 +33,4 @@ router.get('/events/profile/:profile_id', auth, ctrlEvent.getProfileEvents); // 
 router.get('/events/company/:company_id', auth, ctrlEvent.getCompanyEvents);
 router.delete('/events/:event_id', auth, ctrlEvent.deleteEvent);
 
-
 module.exports = router;
