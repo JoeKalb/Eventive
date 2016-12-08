@@ -1,4 +1,4 @@
-<div ui-view></div>
+<div ui-view ng-cloak></div>
 
 <style>
 	body {
@@ -18,18 +18,18 @@
 					<!-- panel of upcoming events for people to see -->
 					<section>
 					<div class="col-md-4">
-						<h3>{{event.eventname}}</h3>
+						<h3 id="eventTitle">{{event.eventname}}</h3>
 						<ul id="uevents_box">
 							<li><p><b>Company Name:</b> {{event.companyname}}</p></li>
 							<li><p><b>Address:</b> {{event.address}}</p></li>
 							<li><p><b>Date:</b> {{event.datetime | date : "medium"}}</p></li>
 						</ul>
 						<!-- edit profile button -->
-						<button type="button" class="btn btn-info btn-lg btn-block" ng-click="vm.addToEvent(event._id)">Sign Up Now!</button>
+						<button type="button" class="btn btn-info btn-lg btn-block" ng-click="vm.addToEvent(event._id)" id="mapBtn">Sign Up Now!</button>
 					</section>
 						<!-- google map view -->
 					<aside>
-						<div class="col-md-7 col-md-offset-2">
+						<div class="col-md-7 col-md-offset-2" id="googlemap">
 							<ui-gmap-google-map center='vm.map.center' 
 												zoom='vm.map.zoom'
 												dragging='false'

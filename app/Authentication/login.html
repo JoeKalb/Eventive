@@ -11,23 +11,28 @@
 
 <div class="container" id="loginContainer">
 	<div class="panel-group">
-		<div class="panel panel-default">
+		<div class="panel panel-default animated fadeIn">
 			<div class="panel-heading">
 				<div class="panel-body">
-					<form>
+					<form class="row">
+					<section>
 						<div class="form-group">
-
+						<div class="col-md-8 col-md-offset-1">
 							<!-- Input fields for user name and password -->
-							<label>Email</label>
+							<h2><b>Login</b></h2>
 							<input type="input" class="form-control" placeholder="Enter Email" ng-model="vm.email" required><br>
-							<label>Password</label>
+
 							<input type="password" class="form-control" placeholder="Enter Password" ng-model="vm.password" required><br>
 
 							<!-- Login button to go to profile page -->
-							<button type="button" class="btn btn-default" ng-click="vm.login()" value="reset form">Login</button><br>
-
-							<!-- Link to register page if not member -->
-							<p>Not a member <a ui-sref="register">sign up!</a></p>
+							<button type="button" class="btn btn-info btn-lg" ng-click="vm.login()" value="reset form" id="loginBtn">Submit</button><br><br>
+					</section>
+					<aside>
+							<div class="col-md-4 col-md-offset-1">
+								<!-- Link to register page if not member -->
+								<h2><b>Not a member</b> <a ui-sref="register" id="signUpLink">sign up!</a></h2>
+							</div>
+					</aside>
 						</div>
 					</form>
 				</div>

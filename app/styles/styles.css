@@ -1,9 +1,14 @@
 /*Styling broken down in sections*/
 
+/*global styling starts*/
 	.panel-default {
-		box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.9);
+		box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 	}
-/*media queries starts*/
+	#fadeIn {
+		-vendor-animation-duration: 3s;
+		-vendor-animation-delay: 2s;
+	}
+	/*media queries*/
 	/*nav bar to dropdown styling*/
 	body {
 		margin: 0;
@@ -77,7 +82,7 @@
 			display: block;
 		}
 	}
-/*media queries ends*/
+/*global styling ends*/
 
 
 /*ui-view styling starts*/
@@ -148,10 +153,18 @@
 	#uevents_box li {
 		font-size: 15px;
 	}
-	h3 {
+	#eventTitle {
 		color: #ed1f7e;
 		font-weight: bold;
 		font-size: 30px;
+		text-align: center
+	}
+	#googlemap {
+		margin-top: 20px;
+	}
+	#mapBtn {
+		box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+		font-size: 150%;
 	}
 /*upcomign events page styling ends*/
 
@@ -159,7 +172,20 @@
 /*login page styling starts*/
 	/*login box*/
 	#loginContainer {
-		padding-top: 70px;
+		padding-top: 50px;
+		width: 800px;
+	}
+	#loginBtn {
+		box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+	}
+	#signUpLink {
+		color: #ed1f7e;
+		font-weight: bold;
+		font-size: 30px;
+	}
+	#signUpLink:hover {
+		font-size: 150%;
+		transition-duration: : 0.2s;
 	}
 /*login page styling ends*/
 
