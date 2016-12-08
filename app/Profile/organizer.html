@@ -54,7 +54,7 @@
 									<th>Name</th>
 									<th>Address</th>
 									<th>Date</th>
-									<th></th>
+									<th>Edit</th>
 									<th></th>
 								</tr>
 								<!-- upcoming events to be setup in ng-repeat to populte events -->
@@ -66,7 +66,9 @@
 									<td>
 										<button type="button" class="btn btn-default btn-sm" style="float: left" ng-click="vm.eventName=event.eventname;									vm.address=event.address;
 															vm.date=event.datetime;
-															vm.description=event.description">Edit</button>
+															vm.description=event.description;
+															vm.eventId=event._id"
+													ng-model="edit">Edit</button>
 										<button type="button" class="btn btn-default btn-sm" style="float: right" ng-click="vm.deleteEvent(event._id, vm.token)">Remove</button>
 									</td>
 								</tr>
@@ -92,7 +94,10 @@
 								<label for="">Add a description</label>
 								<input type="text" ng-model="vm.description">
 							</div>
-							<button ng-click="vm.postNewEvent(vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)">Submit New Event</button>
+							<div ng-switch on="edit">
+								<button ng-click="vm.postNewEvent(vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)" ng-switch-default>Submit New Event</button>
+								<button ng-click="vm.editEvent(vm.eventId, vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)" ng-switch-when="edit">Edit Event</button>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -14,7 +14,8 @@
             getEventsCompany: getEventsCompany,
             getCoordFromAddress: getCoordFromAddress,
             addEvent: addEvent,
-            removeEvent: removeEvent
+            removeEvent: removeEvent,
+            editEvent: editEvent
         };
         return service;
         
@@ -182,6 +183,40 @@
             $http({
                 method: 'POST',
                 url: wineServer + 'events',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                },
+                data: {
+                    'eventname': eventName,
+                    'companyname': companyName,
+                    'companyid': companyid,
+                    'datetime': datetime,
+                    'address': address,
+                    'long': long,
+                    'lat': lat,
+                    'description': description
+                }
+            }).then(function(response) {
+                if (typeof response.data === 'object'){
+                    defer.resolve(response.data);
+                } else {
+                    defer.reject(response);
+                }
+            },
+            function(error) {
+                defer.reject(error);
+            });
+            
+            return defer.promise;
+        }
+
+        function editEvent(eventId, eventName, companyName, companyid, datetime, address, token, long, lat, description) {
+            var defer = $q.defer();
+
+            $http({
+                method: 'PUT',
+                url: wineServer +'events/' + eventId + '/edit',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + token

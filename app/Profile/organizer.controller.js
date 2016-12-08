@@ -53,9 +53,10 @@
 
                 },
                 function(error) {
-                    toastr.error("We couldn't figure out this address")
+                    toastr.error("We couldn't figure out this address");
                 });
         }
+
         vm.deleteEvent = function(eventId, token) {
             EventsFactory.removeEvent(eventId, token).then(
                 function(response) {
@@ -65,6 +66,27 @@
                 function(error) {
                     toastr.error("There was a problem deleting this event");
                 });
+        }
+
+        vm.editEvent = function(eventId, eventName, companyName, companyid, datetime, address, token, long, lat, description) {
+            
+            EventsFactory.getCoordFromAddress(address).then(
+                function(response) {
+                    vm.long = response.result[0].geometry.location.lng;
+                    vm.lat = response.result[0].geometry.location.lat;
+
+                    EventsFactory.editEvent(eventId, eventName, companyName, companyid, datetime, address, token, long, lat, description).then(
+                        function(response) {
+                            console.log(response);
+                            $state.reload();
+                        },
+                        function(error) {
+                            toastr.error("There was a problem editing this event");
+                        })
+                },
+                function(error) {
+                    toastr.error("We had a problem trying to submit this address, please try again.");
+                })
         }
     }
 })();

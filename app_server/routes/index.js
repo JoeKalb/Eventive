@@ -5,7 +5,7 @@ var auth = jwt({
 	secret: 'PINOT',
 	userProperty: 'payload'
 });
-
+// controllers used
 var ctrlProfile = require('../controllers/profile');
 var ctrlAuth = require('../controllers/authentication');
 var ctrlEvent = require('../controllers/allevents');
