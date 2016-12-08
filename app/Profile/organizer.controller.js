@@ -60,6 +60,7 @@
             EventsFactory.removeEvent(eventId, token).then(
                 function(response) {
                     console.log(response);
+                    $state.reload();
                 },
                 function(error) {
                     toastr.error("There was a problem deleting this event");

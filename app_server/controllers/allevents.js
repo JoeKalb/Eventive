@@ -133,16 +133,16 @@ module.exports.checkInAttendee = function(req, res) {
 
 module.exports.deleteEvent = function(req, res) {
 	if (!req.params.event_id) {
-		res.status(400),json({
+		res.status(404),json({
 			"message": "Event not found"
 		});
 	} else {
 		Event
-			.Remove({ _id: req.params.event_id }, function(err) {
+			.findByIdAndRemove(req.params.event_id, function(err) {
         		if (!err) {
-            		return res.send('Event deleted!');
+            		return res.status(200).json({"message": "Event Removed"});
         		} else {
-            		return res.send('Error deleting event!');
+            		return res.send(err);
         		}
 		});
 	}
