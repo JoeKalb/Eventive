@@ -67,7 +67,9 @@
 									<td>{{event.datetime | date:'EEEE, MMMM d, y h:mm a' }}</td>
 									<!-- remove upcoming event button -->
 									<td>
-										<button type="button" class="btn btn-default btn-sm" style="float: left">Edit</button>
+										<button type="button" class="btn btn-default btn-sm" style="float: left" ng-click="vm.eventName=event.eventname;									vm.address=event.address;
+															vm.date=event.datetime;
+															vm.description=event.description">Edit</button>
 										<button type="button" class="btn btn-default btn-sm" style="float: right" ng-click="vm.deleteEvent(event._id, vm.token)">Remove</button>
 									</td>
 								</tr>
