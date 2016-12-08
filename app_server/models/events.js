@@ -28,7 +28,7 @@ var eventSchema = new mongoose.Schema({
 	lat: {
 		type: String,
 		required: true
-	}
+	},
 	attendees: [{
 		attendeeid: mongoose.Schema.Types.ObjectId,
 		attendeename: String, 
