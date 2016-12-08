@@ -38,7 +38,7 @@
             EventsFactory.removeEventFromUser(eventId, vm.id, vm.token).then(
                 function(response) {
                     console.log(response);
-                    $state.reload()
+                    $state.reload();
                 },
                 function(error) {
                     toastr.error("Problem removing user from event");

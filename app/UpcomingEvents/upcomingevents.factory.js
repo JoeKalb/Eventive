@@ -12,7 +12,8 @@
             getEventsByProfile: getEventsByProfile,
             removeEventFromUser: removeEventFromUser,
             getEventsCompany: getEventsCompany,
-            getCoordFromAddress: getCoordFromAddress
+            getCoordFromAddress: getCoordFromAddress,
+            addEvent: addEvent
         };
         return service;
         
@@ -30,7 +31,9 @@
                 }
             }).then(function(response) {
                 if (typeof response.data === 'object'){
+
                     defer.resolve(response.data);
+                    
                 } else {
                     defer.reject(response);
                 }
@@ -38,7 +41,7 @@
             function(error) {
                 defer.reject(error);
             });
-            
+
             return defer.promise;
 
         }
@@ -170,8 +173,9 @@
             return defer.promise;
         }
 
-        function addEvent(eventName, companyName, companyid, datetime, address, token) {
-            var coord = getCoordFromAddress(address);
+        function addEvent(eventName, companyName, companyid, datetime, address, token, long, lat) {
+
+            console.log(datetime);
             var defer = $q.defer();
 
             $http({
@@ -187,8 +191,8 @@
                     'companyid': companyid,
                     'datetime': datetime,
                     'address': address,
-                    'long': coord.results.geometry.location.lng,
-                    'lat': coord.results.geometry.location.lat
+                    'long': long,
+                    'lat': lat
                 }
             }).then(function(response) {
                 if (typeof response.data === 'object'){
@@ -200,7 +204,7 @@
             function(error) {
                 defer.reject(error);
             });
-
+            
             return defer.promise;
         }
     }

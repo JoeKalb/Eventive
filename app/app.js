@@ -5,7 +5,8 @@
             'ui.router', 
             'toastr', 
             'LocalStorageModule', 
-            'uiGmapgoogle-maps'
+            'uiGmapgoogle-maps',
+            'ui.bootstrap.datetimepicker'
         ]);
 
         app.value ('wineServer', 'https://appventful.herokuapp.com/api/');

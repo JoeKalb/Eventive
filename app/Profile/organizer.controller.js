@@ -11,7 +11,6 @@
     function organizerController(toastr, storageFactory, EventsFactory, $state, $stateParams) {
         var vm = this;
         vm.title = 'organizerController';
-
         activate();
 
         ////////////////
@@ -35,13 +34,29 @@
         }
 
         vm.postNewEvent = function(eventName, companyName, companyid, datetime, address, token) {
-            EventsFactory.addEvent(eventName, companyName, companyid, datetime, address, token).then(
+
+            var long;
+            var lat;
+
+            EventsFactory.getCoordFromAddress(address).then(
                 function(response) {
-                    console.log('New Event Posted: ' + response);
+                    long = response.results[0].geometry.location.lng;
+                    lat = response.results[0].geometry.location.lat;
+                    console.log(lat);
                 },
                 function(error) {
-                    toastr.error('Problem posting the event');
+                    toastr.error("We couldn't figure out this address")
                 })
+
+            EventsFactory.addEvent(eventName, companyName, companyid, datetime, address, token, long, lat).then(
+                function(response) {
+                    console.log(response);
+                    $state.reload();
+                },
+                function(error) {
+                    toastr.error("There was a problem posting this event to the database");
+                })
+            
         }
     }
 })();
