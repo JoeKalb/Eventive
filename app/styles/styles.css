@@ -147,12 +147,13 @@
 	#ueventsContainer {
 		margin: 20px;
 		padding: 0;
+		height: 100%;
 	}
 	#uevents_box {
 		text-align: left;
 		width: auto;
 		height: 200px;
-		padding: 30px;
+		padding: 5px;
 		margin: 0;
 		list-style-type: none;
 	}
@@ -163,7 +164,8 @@
 		color: #ed1f7e;
 		font-weight: bold;
 		font-size: 30px;
-		text-align: center
+		text-align: center;
+		margin: 0px;
 	}
 	#googlemap {
 		margin-top: 20px;
@@ -206,7 +208,7 @@
 		width: 250px;
 		height: 250px;
 		padding: 10px;
-		border: 5px solid gray;
+		border: 1px solid gray;
 		margin: 0;
 		overflow-y: auto;
 	}
@@ -215,7 +217,7 @@
 		width: 500px;
 		height: 250px;
 		padding: 10px;
-		border: 5px solid gray;
+		border: 1px solid gray;
 		margin: 0;
 		list-style-type: none;
 	}
@@ -224,7 +226,7 @@
 		width: 765px;
 		height: auto;
 		padding: 10px;
-		border: 5px solid gray;
+		border: 1px solid gray;
 		margin: 0;
 	}
 	#pevents_table {
@@ -237,6 +239,10 @@
 	#profile_body {
 		align-content: center;
 	}
+	.userName {
+		color: #ed1f7e;
+	}
+
 /*profile page styling ends*/
 
 
@@ -248,12 +254,12 @@
 	input[type=password],
 	textarea,
 	fieldset {
-		-webkit-appearance: none;
 		width: 100%;
 		border: 1px solid #333;
 		margin: 0;
 		font-family: inherit;
 		font-size
+		-webkit-appearance: none;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 	}
@@ -265,6 +271,15 @@
 	}
 	input[type="password"] {
 		-webkit-appearance: disc !important;
+	}
+	#registerBox {
+		width: 800px;
+	}
+	#regBtn {
+		box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+	}
+	#regPanel {
+		padding: 50px;
 	}
 /*register page styling ends*/
 
