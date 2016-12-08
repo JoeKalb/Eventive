@@ -144,5 +144,6 @@ module.exports.deleteEvent = function(req, res) {
         		} else {
             		return res.send('Error deleting event!');
         		}
-	});
+		});
+	}
 }
