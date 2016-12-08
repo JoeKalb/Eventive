@@ -31,5 +31,7 @@ router.put('/events/:event_id/remove', auth, ctrlEvent.eventRemoveAttendee);
 router.put('/events/:event_id/checkin', auth, ctrlEvent.checkInAttendee); // change checkin boolean to true
 router.get('/events/profile/:profile_id', auth, ctrlEvent.getProfileEvents); // get events for user
 router.get('/events/company/:company_id', auth, ctrlEvent.getCompanyEvents);
+router.delete('/events/:event_id', auth, ctrlEvent.deleteEvent);
+
 
 module.exports = router;

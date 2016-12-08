@@ -180,7 +180,7 @@
 
             $http({
                 method: 'POST',
-                url: wineServer + '/events',
+                url: wineServer + 'events',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + token

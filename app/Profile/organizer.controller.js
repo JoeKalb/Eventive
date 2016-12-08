@@ -11,7 +11,9 @@
     function organizerController(toastr, storageFactory, EventsFactory, $state, $stateParams) {
         var vm = this;
         vm.title = 'organizerController';
+
         activate();
+        
 
         ////////////////
 
@@ -33,29 +35,26 @@
                 })
         }
 
-        vm.postNewEvent = function(eventName, companyName, companyid, datetime, address, token) {
-
-            var long;
-            var lat;
+        vm.postNewEvent = function(eventName, companyName, companyid, datetime, address, token, long, lat) {
 
             EventsFactory.getCoordFromAddress(address).then(
                 function(response) {
-                    long = response.results[0].geometry.location.lng;
-                    lat = response.results[0].geometry.location.lat;
-                    console.log(lat);
+                    vm.long = response.results[0].geometry.location.lng;
+                    vm.lat = response.results[0].geometry.location.lat;
+                    console.log(vm.lat);
+                    EventsFactory.addEvent(eventName, companyName, companyid, datetime, address, token, vm.long, vm.lat).then(
+                        function(response) {
+                            console.log(response);
+                            $state.reload();
+                        },
+                        function(error) {
+                            toastr.error("There was a problem posting this event to the database");
+                        })
+
                 },
                 function(error) {
                     toastr.error("We couldn't figure out this address")
-                })
-
-            EventsFactory.addEvent(eventName, companyName, companyid, datetime, address, token, long, lat).then(
-                function(response) {
-                    console.log(response);
-                    $state.reload();
-                },
-                function(error) {
-                    toastr.error("There was a problem posting this event to the database");
-                })
+                });
             
         }
     }

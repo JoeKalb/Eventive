@@ -130,3 +130,19 @@ module.exports.checkInAttendee = function(req, res) {
 			});
 	}
 }
+
+module.exports.deleteEvent = function(req, res) {
+	if (!req.params.event_id) {
+		res.status(400),json({
+			"message": "Event not found"
+		});
+	} else {
+		Event
+			.Remove({ id: req.params.event_id }, function(err) {
+        		if (!err) {
+            		return res.send('Event deleted!');
+        		} else {
+            		return res.send('Error deleting event!');
+        		}
+	});
+}
