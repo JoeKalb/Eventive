@@ -174,7 +174,7 @@
             return defer.promise;
         }
 
-        function addEvent(eventName, companyName, companyid, datetime, address, token, long, lat) {
+        function addEvent(eventName, companyName, companyid, datetime, address, token, long, lat, description) {
 
             console.log(datetime);
             var defer = $q.defer();
@@ -193,7 +193,8 @@
                     'datetime': datetime,
                     'address': address,
                     'long': long,
-                    'lat': lat
+                    'lat': lat,
+                    'description': description
                 }
             }).then(function(response) {
                 if (typeof response.data === 'object'){

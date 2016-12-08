@@ -35,14 +35,14 @@
                 })
         }
 
-        vm.postNewEvent = function(eventName, companyName, companyid, datetime, address, token, long, lat) {
+        vm.postNewEvent = function(eventName, companyName, companyid, datetime, address, token, long, lat, description) {
 
             EventsFactory.getCoordFromAddress(address).then(
                 function(response) {
                     vm.long = response.results[0].geometry.location.lng;
                     vm.lat = response.results[0].geometry.location.lat;
-                    console.log(vm.lat);
-                    EventsFactory.addEvent(eventName, companyName, companyid, datetime, address, token, vm.long, vm.lat).then(
+
+                    EventsFactory.addEvent(eventName, companyName, companyid, datetime, address, token, vm.long, vm.lat, description).then(
                         function(response) {
                             console.log(response);
                             $state.reload();

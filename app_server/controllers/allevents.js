@@ -43,7 +43,8 @@ module.exports.eventPost = function(req, res) {
 	event.address = req.body.address;
 	event.long = req.body.long;
 	event.lat = req.body.lat;
-
+	event.description = req.body.description;
+	
 	event.save(function(err) {
 		if (err) res.send(err);
 		else res.status(200).json(event);

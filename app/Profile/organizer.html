@@ -90,11 +90,11 @@
 								<label for="date">Date and Time</label>
 								<datetimepicker data-ng-model="vm.date" class="col-md-6" id="date"></datetimepicker>
 								<p>Selected Date: {{ vm.date | date:'EEEE, MMMM d, y h:mm a' }}</p>
-								<button ng-click="vm.postNewEvent(vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat)">Submit New Event</button>
+								<label for="">Add a description</label>
+								<input type="text" ng-model="vm.description">
 							</div>
-
+							<button ng-click="vm.postNewEvent(vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)">Submit New Event</button>
 						</div>
-						
 					</div>
 				</div>
 			</div>
