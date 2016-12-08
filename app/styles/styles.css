@@ -59,7 +59,7 @@
 		color: white;
 		display: none;
 	}
-	@media screen and (max-width: 991px){
+	@media screen and (max-width: 991px) {
 		nav ul {
 			max-height: 0;
 		}
@@ -112,13 +112,14 @@
 		font-weight: bold;
 		text-decoration: none;
 		color: black;
+		margin-top: 10px;
 	}
 	#btn:focus,
 	#btn:active,
 	#btn:hover {
 		background-color: none !important;
 		color: #ed1f7e !important;
-		font-size: 150%;
+		font-size: 125%;
 		font-variant: small-caps;
 		transition-duration: .2s;
 	}
@@ -130,6 +131,11 @@
 	}
 	#logo .btn:focus {
 		outline: none;
+	}
+	@media screen and (max-width: 991px) {
+		#logo {
+			margin: auto;
+		}
 	}
 /*top navigation bar styling ends*/
 
@@ -186,6 +192,10 @@
 	#signUpLink:hover {
 		font-size: 150%;
 		transition-duration: : 0.2s;
+	}
+	#login,
+	#password {
+		width: 100%;
 	}
 /*login page styling ends*/
 
