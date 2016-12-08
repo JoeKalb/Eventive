@@ -1,10 +1,8 @@
 /*Styling broken down in sections*/
 
 	.panel-default {
-		opacity: 0.9;
 		box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.9);
 	}
-
 /*media queries starts*/
 	/*nav bar to dropdown styling*/
 	body {
@@ -26,7 +24,7 @@
 		overflow: hidden;
 		color: white;
 		padding: 0;
-		text-align: center;
+		text-align: right;
 		margin: 0;
 		-webkit-transition: max-height 0.4s;
 		-ms-transition: max-height 0.4s;
@@ -41,21 +39,22 @@
 	section {
 		line-height: 1.5em;
 		font-size: 0.9em;
-		padding: 40px;
 		width: 75%;
 		margin: 0;
 	}
 	.handle {
 		width: 100%;
+		height: 30px;
 		background: #ed1f7e;
-		text-align: left;
+		text-align: right;
+		font-weight: bold;
 		box-sizing: border-box;
-		padding: 10px 10px;
+		padding: 10px;
 		cursor: pointer;
 		color: white;
 		display: none;
 	}
-	@media screen and (max-width: 1224px){
+	@media screen and (max-width: 991px){
 		nav ul {
 			max-height: 0;
 		}
@@ -67,8 +66,12 @@
 			box-sizing: border-box;
 			width: 100%;
 			padding: 10px;
-			text-align: left;
+			text-align: right;
 			color: white;
+			opacity: 0.9;
+		}
+		nav ul li:hover {
+			color: black;
 		}
 		.handle {
 			display: block;
@@ -82,7 +85,6 @@
 		margin: 100px 0px;
 		width: 100%;
 		color: black;
-		padding: 10px;
 	}
 /*ui-view styling ends*/
 
@@ -92,6 +94,9 @@
 
 
 /*top navigation bar styling starts*/
+	.conatainer {
+		padding: 10px;
+	}
 	#navbar_top {
 		padding: 0;
 		height: 100px;
@@ -110,12 +115,13 @@
 		color: #ed1f7e !important;
 		font-size: 150%;
 		font-variant: small-caps;
-		transition-duration: .3s;
+		transition-duration: .2s;
 	}
 	#logo {
 		width:170px;
 		height:80px;
 		padding-top: 0;
+		margin-left: 50px;
 	}
 	#logo .btn:focus {
 		outline: none;
@@ -124,18 +130,28 @@
 
 
 /*upcoming evnts page styling starts*/
+	#ueventsPanel {
+		margin-bottom: 20px;
+	}
+	#ueventsContainer {
+		margin: 20px;
+		padding: 0;
+	}
 	#uevents_box {
+		text-align: left;
 		width: auto;
-		height: 250px;
+		height: 200px;
 		padding: 30px;
-		border: 5px solid gray;
 		margin: 0;
 		list-style-type: none;
 	}
-	#uevents_items {
-		margin: auto;
-		width: 100%;
-		padding: 0px 30px;
+	#uevents_box li {
+		font-size: 15px;
+	}
+	h3 {
+		color: #ed1f7e;
+		font-weight: bold;
+		font-size: 30px;
 	}
 /*upcomign events page styling ends*/
 
