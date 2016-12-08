@@ -44,7 +44,7 @@ module.exports.eventPost = function(req, res) {
 	event.long = req.body.long;
 	event.lat = req.body.lat;
 	event.description = req.body.description;
-	
+
 	event.save(function(err) {
 		if (err) res.send(err);
 		else res.status(200).json(event);
@@ -56,6 +56,10 @@ module.exports.editEvent = function(req, res) {
 		event.eventname = req.body.eventname;
 		event.address = req.body.address;
 		event.datetime = req.body.datetime;
+		event.address = req.body.address;
+		event.long = req.body.long;
+		event.lat = req.body.lat;
+		event.description = req.body.description;
 
 		event.save(function(err) {
 			if(err) res.send(err);
