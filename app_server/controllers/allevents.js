@@ -138,7 +138,7 @@ module.exports.deleteEvent = function(req, res) {
 		});
 	} else {
 		Event
-			.Remove({ id: req.params.event_id }, function(err) {
+			.Remove({ _id: req.params.event_id }, function(err) {
         		if (!err) {
             		return res.send('Event deleted!');
         		} else {
