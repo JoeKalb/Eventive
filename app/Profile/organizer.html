@@ -18,91 +18,84 @@
 </style>
 
 <div class="container">
-	<div class="row">
-	<div class="panel-group">
-		<div class="panel panel-default">
-				<h2><span class="userName">{{vm.name}}'s</span> Page</h2>
-					<!-- profile picture image box -->
-					<div class="col-md-4" id="picbox">
-						<form id="form1">
-							<input type='file' accept="image/*" />
-							<img id="myImg" src="#" alt="your image" />
-						</form>
-					</div>
-				
-					<!-- profile information box -->
-					<div class="col-md-4">
-						<ul id="prof_info">
-							<li><p>Name: {{vm.name}}</p></li>
-							<li><p>Email: {{vm.email}}</p></li>
-							<li><p>Phone Number: {{vm.number}}</p></li>
-							<!-- edit profile button -->
-							<button type="button" class="btn btn-default" style="float: right">Edit</button>
-						</ul>
-					</div>
-
-
-				<!-- upcoming events list -->
-				<div class="panel-body">
-					<div class="row">
-						<div class="col-md-12" id="pevents_box">
-							<tr>
-								<th><b>Upcoming Events</b></th>
-							</tr>
-							<table class="table" id="pevents_table">
-								<tr>
-									<th>Name</th>
-									<th>Address</th>
-									<th>Date</th>
-									<th>Edit</th>
-									<th></th>
-								</tr>
-								<!-- upcoming events to be setup in ng-repeat to populte events -->
-								<tr ng-repeat="event in vm.events">
-									<td>{{event.eventname}}</td>
-									<td>{{event.address}}</td>
-									<td>{{event.datetime | date:'EEEE, MMMM d, y h:mm a' }}</td>
-									<!-- remove upcoming event button -->
-									<td>
-										<button type="button" class="btn btn-default btn-sm" style="float: left" ng-click="vm.eventName=event.eventname;									vm.address=event.address;
-															vm.date=event.datetime;
-															vm.description=event.description;
-															vm.eventId=event._id"
-													ng-model="edit">Edit</button>
-										<button type="button" class="btn btn-default btn-sm" style="float: right" ng-click="vm.deleteEvent(event._id, vm.token)">Remove</button>
-									</td>
-								</tr>
-							</table>
-						</div>
-					</div>
+	<div class="container">
+		<div class="row row-flex row-flex-wrap">
+			<div class="col-md-6">
+				<div class="well">
+					<form id="form1">
+						<input type='file' accept="image/*" />
+						<img id="myImg" src="#" alt="your image" />
+					</form>
 				</div>
-				<div class="panel-body">
-					<div class="row">
-						<div class="col-md-12" id="pevents_box">
-							<div class="form-group">
-								<label for="">Event Name</label>
-								<input type="text" placeholder="Put Event Name Here" ng-model="vm.eventName">
-							</div>
-							<div class="form-group">
-								<label for="">Address</label>
-								<input type="text" placeholder="Add an Address" ng-model="vm.address">
-							</div>
-							<div class="form-group">
-								<label for="date">Date and Time</label>
-								<datetimepicker data-ng-model="vm.date" class="col-md-6" id="date"></datetimepicker>
-								<p>Selected Date: {{ vm.date | date:'EEEE, MMMM d, y h:mm a' }}</p>
-								<label for="">Add a description</label>
-								<input type="text" ng-model="vm.description">
-							</div>
-							<div ng-switch on="edit">
-								<button ng-click="vm.postNewEvent(vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)" ng-switch-default>Submit New Event</button>
-								<button ng-click="vm.editEvent(vm.eventId, vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)" ng-switch-when="edit">Edit Event</button>
-							</div>
-						</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="well">
+					<ul id="prof_info">
+						<li><p>Name: {{vm.name}}</p></li>
+						<li><p>Email: {{vm.email}}</p></li>
+						<li><p>Phone Number: {{vm.number}}</p></li>
+						<!-- edit profile button -->
+						<button type="button" class="btn btn-default" style="float: right">Edit</button>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-md-12" >
+				<div class="well">
+				<tr>
+						<th><b>Upcoming Events</b></th>
+					</tr>
+					<table class="table" id="pevents_table">
+						<tr>
+							<th>Name</th>
+							<th>Address</th>
+							<th>Date</th>
+							<th>Edit</th>
+							<th></th>
+						</tr>
+						<!-- upcoming events to be setup in ng-repeat to populte events -->
+						<tr ng-repeat="event in vm.events">
+							<td>{{event.eventname}}</td>
+							<td>{{event.address}}</td>
+							<td>{{event.datetime | date:'EEEE, MMMM d, y h:mm a' }}</td>
+							<!-- remove upcoming event button -->
+							<td>
+								<button type="button" class="btn btn-default btn-sm" style="float: left" ng-click="vm.eventName=event.eventname;									vm.address=event.address;
+													vm.date=event.datetime;
+													vm.description=event.description;
+													vm.eventId=event._id"
+											ng-model="edit">Edit</button>
+								<button type="button" class="btn btn-default btn-sm" style="float: right" ng-click="vm.deleteEvent(event._id, vm.token)">Remove</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="well">
+					<div class="form-group">
+						<label for="">Event Name</label>
+						<input type="text" placeholder="Put Event Name Here" ng-model="vm.eventName">
+					</div>
+					<div class="form-group">
+						<label for="">Address</label>
+						<input type="text" placeholder="Add an Address" ng-model="vm.address">
+					</div>
+					<div class="form-group">
+						<label for="date">Date and Time</label>
+						<datetimepicker data-ng-model="vm.date" class="col-md-6" id="date"></datetimepicker>
+						<p>Selected Date: {{ vm.date | date:'EEEE, MMMM d, y h:mm a' }}</p>
+						<label for="">Add a description</label>
+						<input type="text" ng-model="vm.description">
+					</div>
+					<div ng-switch on="edit">
+						<button ng-click="vm.postNewEvent(vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)" ng-switch-default>Submit New Event</button>
+						<button ng-click="vm.editEvent(vm.eventId, vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)" ng-switch-when="edit">Edit Event</button>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
+		</div> <!-- /row -->
+	</div> <!-- /container -->
 </div>
-

@@ -4,7 +4,7 @@
 	.panel-default {
 		box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 	}
-	#fadeIn {
+	.fadeIn {
 		-vendor-animation-duration: 3s;
 		-vendor-animation-delay: 2s;
 	}
@@ -222,13 +222,6 @@
 		list-style-type: none;
 	}
 	/*upcoming events box*/
-	#pevents_box {
-		width: 765px;
-		height: auto;
-		padding: 10px;
-		border: 1px solid gray;
-		margin: 0;
-	}
 	#pevents_table {
 		width: 100%;
 		border-collapse: collapse;
