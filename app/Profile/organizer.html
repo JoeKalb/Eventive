@@ -64,11 +64,12 @@
 									<td>{{event.datetime | date:'EEEE, MMMM d, y h:mm a' }}</td>
 									<!-- remove upcoming event button -->
 									<td>
-										<button type="button" class="btn btn-default btn-sm" style="float: left" ng-click="vm.eventName=event.eventname;									vm.address=event.address;
+										<button type="button" class="btn btn-default btn-sm" style="float: left" ng-click="vm.eventName=event.eventname;										vm.address=event.address;
 															vm.date=event.datetime;
 															vm.description=event.description;
-															vm.eventId=event._id"
-													ng-model="edit">Edit</button>
+															vm.eventId=event._id;
+															vm.long=event.long;
+															vm.lat=event.lat">Edit</button>
 										<button type="button" class="btn btn-default btn-sm" style="float: right" ng-click="vm.deleteEvent(event._id, vm.token)">Remove</button>
 									</td>
 								</tr>
@@ -94,9 +95,9 @@
 								<label for="">Add a description</label>
 								<input type="text" ng-model="vm.description">
 							</div>
-							<div ng-switch on="edit">
-								<button ng-click="vm.postNewEvent(vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)" ng-switch-default>Submit New Event</button>
-								<button ng-click="vm.editEvent(vm.eventId, vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)" ng-switch-when="edit">Edit Event</button>
+							<div >
+								<button ng-click="vm.postNewEvent(vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)" ng-hide="vm.edit === 0">Submit New Event</button>
+								<button ng-click="vm.editEvent(vm.eventId, vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)">Edit Event</button>
 							</div>
 						</div>
 					</div>

@@ -11,7 +11,6 @@
     function organizerController(toastr, storageFactory, EventsFactory, $state, $stateParams) {
         var vm = this;
         vm.title = 'organizerController';
-
         activate();
         
 
@@ -72,9 +71,10 @@
             
             EventsFactory.getCoordFromAddress(address).then(
                 function(response) {
-                    vm.long = response.result[0].geometry.location.lng;
-                    vm.lat = response.result[0].geometry.location.lat;
-
+                    console.log("no problem yet")
+                    //vm.long = response.result[0].geometry.location.lng;
+                    //vm.lat = response.result[0].geometry.location.lat;
+                    console.log(vm.lat);
                     EventsFactory.editEvent(eventId, eventName, companyName, companyid, datetime, address, token, long, lat, description).then(
                         function(response) {
                             console.log(response);
