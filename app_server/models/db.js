@@ -51,3 +51,4 @@ process.on('SIGTERM', function() {
 // bring in schemas & models
 require('./users');
 require('./events');
+require('./messages')
