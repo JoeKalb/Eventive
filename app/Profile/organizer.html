@@ -31,8 +31,8 @@
 			</div>
 			<!-- profile information -->
 			<div class="col-md-6">
-				<div class="well">
-					<ul id="prof_info">
+				<div class="well clearfix">
+					<ul id="proInfo">
 						<li><p>Name: {{vm.name}}</p></li>
 						<li><p>Email: {{vm.email}}</p></li>
 						<li><p>Phone Number: {{vm.number}}</p></li>
@@ -91,9 +91,9 @@
 						<label for="">Add a description</label>
 						<input type="text" ng-model="vm.description">
 					</div>
-					<div ng-switch on="edit">
-						<button ng-click="vm.postNewEvent(vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)" ng-switch-default>Submit New Event</button>
-						<button ng-click="vm.editEvent(vm.eventId, vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)" ng-switch-when="edit">Edit Event</button>
+					<div>
+						<button ng-click="vm.postNewEvent(vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)">Submit New Event</button>
+						<button ng-click="vm.editEvent(vm.eventId, vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)">Edit Event</button>
 					</div>
 				</div>
 			</div>
