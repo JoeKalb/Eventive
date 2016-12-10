@@ -2,30 +2,32 @@
 
 <style>
 	body {
-		background-image: url("../app/styles/pictures/dc.jpg");
+		background-image: url("../app/styles/pictures/laptop2.jpg");
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 		background-size: cover;
+		background-position: center;
 	}
 	@media screen and (max-width: 991px) {
 		body{
-			background-image: url("../app/styles/pictures/park.jpg");
+			background-image: url("../app/styles/pictures/lvlaptop.jpeg");
 			background-repeat: no-repeat;
 			background-attachment: fixed;
-			background-size: cover;	
+			background-size: cover;
+			background-position: center;	
 		}
 	}
 	.angular-google-map-container { height: 300px; }
 </style>
 
-<div class="container">
+<div class="container" id="ueventsContainer">
 	<div class="panel-group">
 		<div class="panel panel-default animated fadeIn" ng-repeat="event in vm.events" id="ueventsPanel">
-			<div class="panel-body" id="ueventsContainer">
+			<div class="panel-body">
 				<div class="form-group">
 					<!-- panel of upcoming events for people to see -->
 					<section>
-					<div class="col-md-4">
+					<div class="col-md-4 ontop">
 						<h3 id="eventTitle">{{event.eventname}}</h3>
 						<ul id="uevents_box">
 							<li><p><b>Company Name:</b> {{event.companyname}}</p></li>

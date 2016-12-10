@@ -6,13 +6,15 @@
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 		background-size: cover;
+		background-position: center;
 	}
 	@media screen and (max-width: 991px) {
 		body{
-			background-image: url("../app/styles/pictures/park.jpg");
+			background-image: url("../app/styles/pictures/lvlaptop.jpeg");
 			background-repeat: no-repeat;
 			background-attachment: fixed;
 			background-size: cover;	
+			background-position: center;
 		}
 	}
 </style>
@@ -91,15 +93,9 @@
 						<label for="">Add a description</label>
 						<input type="text" ng-model="vm.description">
 					</div>
-<<<<<<< HEAD
 					<div >
 						<button ng-click="vm.postNewEvent(vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)" >Submit New Event</button>
-						<button ng-click="vm.editEvent(vm.eventId, vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)" >Edit Event</button>
-=======
-					<div>
-						<button ng-click="vm.postNewEvent(vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)">Submit New Event</button>
 						<button ng-click="vm.editEvent(vm.eventId, vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)">Edit Event</button>
->>>>>>> f80d504c1c6fad63cc24f5d13fa9b04e8b72862d
 					</div>
 				</div>
 			</div>
