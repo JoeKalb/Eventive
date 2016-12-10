@@ -9,6 +9,7 @@ var auth = jwt({
 var ctrlProfile = require('../controllers/profile');
 var ctrlAuth = require('../controllers/authentication');
 var ctrlEvent = require('../controllers/allevents');
+var ctrlMessages = require('../controllers/messanger');
 
 router.get('/', function (req, res){
 	res.json({message: 'The server is working!'});
@@ -32,5 +33,9 @@ router.put('/events/:event_id/checkin', auth, ctrlEvent.checkInAttendee); // cha
 router.get('/events/profile/:profile_id', auth, ctrlEvent.getProfileEvents); // get events for user
 router.get('/events/company/:company_id', auth, ctrlEvent.getCompanyEvents);
 router.delete('/events/:event_id', auth, ctrlEvent.deleteEvent); // only for organizers
+
+// messages
+router.get('/messages', ctrlMessages.testTwilio);
+router.post('/messages/:event_id', auth, ctrlMessages.sendGroupMessages);
 
 module.exports = router;
