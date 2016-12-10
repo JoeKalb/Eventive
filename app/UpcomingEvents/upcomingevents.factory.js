@@ -15,11 +15,42 @@
             getCoordFromAddress: getCoordFromAddress,
             addEvent: addEvent,
             removeEvent: removeEvent,
-            editEvent: editEvent
+            editEvent: editEvent, 
+            sendMessage: sendMessage
         };
         return service;
         
         ////////////////
+        function sendMessage(eventId, eventName, eventAddress, eventAttendees, token) {
+            var defer = $q.defer();
+
+            $http({
+                method: 'POST',
+                url: wineServer + 'messages/' + eventId,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                },
+                data: {
+                    "eventId": eventId,
+                    "eventName": eventName,
+                    "eventAddress": eventAddress,
+                    "attendees": eventAttendees
+                }
+            }).then(function(response) {
+                if (typeof response.data === 'object') {
+                    defer.resolve(response.data);
+                } else {
+                    defer.reject(response);
+                }
+            },
+            function(error) {
+                defer.reject(error);
+            });
+
+            return defer.promise;
+        }
+
         function getCoordFromAddress(address) {
             var defer = $q.defer();
 

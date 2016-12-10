@@ -88,5 +88,16 @@
                     toastr.error("We had a problem trying to submit this address, please try again.");
                 })
         }
+
+        vm.sendMessage = function(eventId, eventName, eventAddress, eventAttendees, token) {
+            EventsFactory.sendMessage(eventId, eventName, eventAddress, eventAttendees, token).then(
+                function(response) {
+                    console.log(response);
+                    toastr.success("Messages sent!");
+                },
+                function(error) {
+                    toastr.error("Error sending messages: " + error);
+                }) 
+        }
     }
 })();

@@ -60,7 +60,7 @@
 
     		$http({
     			method: 'GET',
-    			url: wineServer + '/profile',
+    			url: wineServer + 'profile',
     			headers: {
     				'Authorization': 'Bearer ' + token
     			}
