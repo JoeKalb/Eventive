@@ -23,7 +23,7 @@ module.exports.sendGroupMessages = function(req, res) {
 	var len = req.body.attendees.length;
 	for(var i = 0; i < len; i++) {
 		client.sendMessage({
-			to: '+1' + req.body.attendees[i].attendeenumber,
+			to: '+16613001234',//'+1' + req.body.attendees[i].attendeenumber,
 			from: '+16193040115',
 			body: 'Hi ' + req.body.attendees[i].attendeename + "! Thank you for checking into " + req.body.eventName + ". We hope you have a wonderful time."
 		});
