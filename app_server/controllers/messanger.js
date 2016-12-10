@@ -7,7 +7,7 @@ module.exports.testTwilio = function (req, res) {
 	client.sendMessage({
 		to:'+16613001234', // Any number Twilio can deliver to
     	from: '+16193040115', // A number you bought from Twilio and can use for outbound communication
-    	body: 'Hiya!' // body of the SMS message
+    	body: 'I like turtles' // body of the SMS message
 	}, 
 	function(err, response) {
 		if(err) res.send(err);
@@ -20,6 +20,16 @@ module.exports.testTwilio = function (req, res) {
 }
 
 module.exports.sendGroupMessages = function(req, res) {
-	
-	
+	req.body.attendees.forEach(function() {
+		client.sendMessage({
+			to:'+16613001234', // Any number Twilio can deliver to
+    		from: '+16193040115', // A number you bought from Twilio and can use for outbound communication
+    		body: 'I like turtles' // body of the SMS message
+		},
+		function(err, response) {
+			if(err) res.send(err);
+			else res.status(200).json(response.body);
+		});
+	});
+
 }
