@@ -1,3 +1,7 @@
+$(document).ready(function() {
+	$('#flash').hide();
+});
+
 // converts nav bar buttons to drop down menu view
 $('.handle').on('click', function(){
 	$('nav ul').toggleClass('showing');
