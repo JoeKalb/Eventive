@@ -2,13 +2,12 @@
 
 /*global styling starts*/
 	.panel-default {
-		box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+		box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.7);
 	}
 	.fadeIn {
 		-vendor-animation-duration: 3s;
 		-vendor-animation-delay: 2s;
 	}
-	/*media queries*/
 	/*nav bar to dropdown styling*/
 	body {
 		margin: 0;
@@ -40,8 +39,9 @@
 	}
 	nav ul li {
 		display: inline-block;
-		padding: 20px;
-		margin-top: 10px;
+		padding: 20px 0 20px 2px;
+		margin-top: 15px;
+		margin-left: 0px;
 	}
 	section {
 		line-height: 1.5em;
@@ -72,7 +72,7 @@
 			background: #f6a2ef;
 			box-sizing: border-box;
 			width: 100%;
-			padding: 10px;
+			padding: 5px;
 			text-align: right;
 			color: white;
 			opacity: 0.9;
@@ -112,7 +112,7 @@
 		max-height: 80px;
 	}
 	#btn {
-		font-weight: bold;
+		font-size: 25px;
 		text-decoration: none;
 		color: black;
 		margin-top: 10px;
@@ -121,10 +121,12 @@
 	#btn:active,
 	#btn:hover {
 		background-color: none !important;
-		color: #ee61e2 !important;
+		border-color: #ee61e2 !important;
+		font-weight: bold;
+		border-bottom: 15px solid;
 	}
 	#logo {
-		width:180px;
+		width:200px;
 		height:75px;
 		padding-top: 5px;
 		margin-left: 50px;
@@ -147,15 +149,18 @@
 	}
 	#ueventsContainer {
 		width: 1000px;
-		padding: 2% 5%;
+		max-width: 90%;
+		padding: 1% 5%;
 	}
 	#uevents_box {
 		text-align: left;
-		width: 100%;
-		height: 250px;
+		width: 300px;
+		height: 100%;
+		max-height: 250px;
 		padding: 10px;
 		margin: 10px;
 		list-style-type: none;
+		position: center;
 	}
 	#uevents_box li {
 		font-size: 15px;
@@ -169,24 +174,28 @@
 		width: 300px;
 	}
 	#googlemap {
-		margin-top: 20px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border: 1px;
+		padding: 1px;
 	}
 	#mapBtn {
-		box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+		box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
 		font-size: 150%;
-		width: 200px;
+		width: 400px;
+		max-width: 90%;
 	}
 /*upcomign events page styling ends*/
 
 
 /*login page styling starts*/
-	/*login box*/
 	#loginContainer {
-		padding-top: 10%;
+		padding-top: 2%;
 		width: 800px;
+		max-width: 90%;
 	}
 	#loginBtn {
-		box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+		box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
 		width: 150px;
 	}
 	#signUpLink {
@@ -195,28 +204,35 @@
 		font-size: 30px;
 	}
 	#signUpLink:hover {
-		font-size: 150%;
+		font-size: 125%;
 		transition-duration: : 0.2s;
 	}
 	#login,
 	#password {
 		width: 100%;
 	}
+	#loginText {
+		font-size: 40px;
+	}
 /*login page styling ends*/
 
 
 /*profile page styling starts*/
-	/*profile information box*/
 	#proInfo {
 		list-style-type: none;
 	}
-	/*upcoming events box*/
+	.headings {
+		font-weight: bold;
+		font-size: 20px;	}
 	#pevents_table {
 		width: 100%;
 		border-collapse: collapse;
 	}
-	#pevents_table td:hover {
-		background-color: #ee61e2;
+	#pevents_table tr {
+		border: 10px;
+	}
+	tr .border_bottom td {
+		border-bottom: 1pt solid black;
 	}
 	#profile_body {
 		align-content: center;
@@ -225,7 +241,35 @@
 		color: #ee61e2;
 	}
 	.well {
-		box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+		box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
+	}
+	#loginBox {
+		padding-top: 3%;
+	}
+	#profileName {
+		color: #ee61e2;
+		font-weight: bold;
+	}
+	#btn-sm {
+		width: 100%;
+		margin: 1px;
+		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	}
+	#proBtn {
+		margin: 1px;
+		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);		
+	}
+	#eventBtn1 {
+		box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
+		font-size: 125%;
+		width: 200px;
+		max-width: 90%;
+	}
+	#eventBtn2 {
+		box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
+		font-size: 125%;
+		width: 200px;
+		max-width: 90%;
 	}
 /*profile page styling ends*/
 
@@ -242,7 +286,6 @@
 		border: 1px solid #333;
 		margin: 0;
 		font-family: inherit;
-		font-size
 		-webkit-appearance: none;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
@@ -258,10 +301,11 @@
 	}
 	#registerBox {
 		width: 800px;
-		padding-top: 10%;
+		padding-top: 2%;
 	}
 	#regBtn {
-		box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+		box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
+		width: 150px;
 	}
 	#regPanel {
 		padding: 50px;
