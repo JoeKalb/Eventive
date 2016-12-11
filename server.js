@@ -7,7 +7,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require('passport');
-var client = require('twilio')('AC2462a311593e3dd3e1572b131303d4fa', 'c03c3877729224147ce7aa437113e75f');
 
 require('./app_server/models/db');
 require('./app_server/config/passport');
