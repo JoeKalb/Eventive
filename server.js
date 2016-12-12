@@ -7,6 +7,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require('passport');
+var Grid = require('gridfs-stream');
+var fs = require('fs');
+var busboyBodyParser = require('busboy-body-parser');
 
 require('./app_server/models/db');
 require('./app_server/config/passport');
@@ -27,6 +30,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(busboyBodyParser ({limit: '200mb'}));
 // might need to call on angular, refer after testing
 // folder connections should note be needed if gulp is used to serve, 
 // the front end but not used for the live server
