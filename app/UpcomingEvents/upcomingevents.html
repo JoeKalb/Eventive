@@ -37,27 +37,31 @@
 						</ul>
 						<!-- edit profile button -->
 						<button type="button" class="btn btn-info btn-lg btn-block" ng-click="vm.addToEvent(event._id)" id="mapBtn">Sign Up Now!</button>
+					</div>
 					</section>
-						<!-- google map view -->
-					<aside>
-						<div class="col-md-6 col-md-offset-2" id="googlemap">
-							<ui-gmap-google-map center='vm.map.center' 
+				</div>
+			</div>
+		</div>
+		<!-- google map view -->
+		<div class="panel panel-default animated fadeIn">
+			<aside>
+				<div class="col-md-6 col-md-offset-2" id="googlemap">
+					<ui-gmap-google-map center='vm.map.center' 
 												zoom='vm.map.zoom'
 												dragging='false'
 												>
-								<ui-gmap-marker coords='{ latitude: event.lat, longitude: event.long}' idKey='event._id' options='{clickable: ture}'>
-									<ui-gmap-window 
-											show='false'
-											isIconVisibleOnClick='true'>
-										<p>{{event.eventname}}: {{event.address}}</p>
-									</ui-gmap-window>
-								</ui-gmap-marker>
-							</ui-gmap-google-map>
-						</div>
-					</aside>
-					</div>
+						<div ng-repeat="event in vm.events">					
+							<ui-gmap-marker coords='{ latitude: event.lat, longitude: event.long}' idKey='event._id' options='{clickable: ture}'>
+								<ui-gmap-window 
+									show='false'
+									isIconVisibleOnClick='true'>
+									<p>{{event.eventname}}: {{event.address}}</p>
+								</ui-gmap-window>
+						</ui-gmap-marker>
+						</div>	
+					</ui-gmap-google-map>
 				</div>
-			</div>
+			</aside>
 		</div>
 	</div>
 </div>
