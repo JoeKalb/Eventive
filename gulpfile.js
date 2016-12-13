@@ -81,7 +81,7 @@ gulp.task('start', function () {
 gulp.task('serveprod', function() {
   connect.server({
     root: './index.html',
-    port: 5000, // localhost:5000
+    port: process.env.PORT || 5000, // localhost:5000
     livereload: false
   });
 });
