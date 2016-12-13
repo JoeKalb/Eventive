@@ -53,8 +53,9 @@ gulp.task('connect', function() {
 });
 
 gulp.task('app', function(){
+    var port = process.env.PORT || 8080;
     var options = {
-        uri: process.env.PORT || 'http://localhost:8080',
+        uri: 'http://localhost:' + port,
         app: 'chrome'
     };
     gulp.src('./index.html')
