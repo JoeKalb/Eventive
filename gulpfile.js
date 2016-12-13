@@ -57,7 +57,7 @@ gulp.task('liveConnect', function() {
         root: '.',
         livereload: false
     })
-})
+});
 
 gulp.task('app', function(){
     var port = 8080;
