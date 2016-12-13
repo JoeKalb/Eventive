@@ -95,4 +95,4 @@ gulp.task('connected', function() {
 
 gulp.task('serve', ['connect', 'watch', 'injectables', 'app']);
 
-gulp.task('live', ['injectables', 'connected']);
+gulp.task('live', ['injectables', 'serveprod']);
