@@ -69,6 +69,6 @@ gulp.task('start', function () {
   })
 });
 
-gulp.task('serve', ['connect', 'watch', 'injectables', 'app']);
+gulp.task('serve', ['connect', 'start', 'watch', 'injectables', 'app']);
 
 gulp.task('heroku:production', ['connect', 'start', 'watch', 'injectables']);
