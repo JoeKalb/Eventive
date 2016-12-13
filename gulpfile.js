@@ -87,6 +87,10 @@ gulp.task('serveprod', function() {
   console.log(process.env.NODE_ENV);
 });
 
+gulp.task('connected', function() {
+  connect.server();
+});
+
 gulp.task('serve', ['connect', 'watch', 'injectables', 'app']);
 
-gulp.task('live', ['injectables', 'serveprod']);
+gulp.task('live', ['injectables', 'connected']);
