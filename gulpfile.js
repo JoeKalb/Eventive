@@ -88,4 +88,4 @@ gulp.task('serveprod', function() {
 
 gulp.task('serve', ['connect', 'watch', 'injectables', 'app']);
 
-gulp.task('live', ['liveConnect', 'injectables', 'serveprod']);
+gulp.task('live', ['injectables', 'serveprod']);
