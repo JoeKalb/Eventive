@@ -83,6 +83,6 @@ gulp.task('start', function () {
 
 gulp.task('serve', ['connect', 'watch', 'injectables', 'app']);
 
-gulp.task('live', ['liveConnect', 'injectables', 'app']);
+gulp.task('live', ['liveConnect', 'watch', 'injectables', 'app']);
 
 
