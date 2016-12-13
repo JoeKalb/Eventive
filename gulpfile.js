@@ -84,6 +84,7 @@ gulp.task('serveprod', function() {
     port: process.env.PORT || 5000, // localhost:5000
     livereload: false
   });
+  console.log(process.env.NODE_ENV);
 });
 
 gulp.task('serve', ['connect', 'watch', 'injectables', 'app']);
