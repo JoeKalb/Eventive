@@ -5,10 +5,10 @@
         .module('app')
         .controller('organizerController', organizerController);
 
-    organizerController.$inject = ['toastr', 'storageFactory', 'EventsFactory', '$state', '$stateParams'];
+    organizerController.$inject = ['toastr', 'storageFactory', 'EventsFactory', '$state', '$stateParams', 'Upload', '$scope', 'wineServer'];
     
     /* @ngInject */
-    function organizerController(toastr, storageFactory, EventsFactory, $state, $stateParams) {
+    function organizerController(toastr, storageFactory, EventsFactory, $state, $stateParams, Upload, $scope, wineServer) {
         var vm = this;
         vm.title = 'organizerController';
         activate();
@@ -98,6 +98,19 @@
                 function(error) {
                     toastr.error("Error sending messages: " + error);
                 }) 
+        }
+
+        $scope.upload = function(file, userId) {
+            Upload.upload({
+                url: wineServer + 'files',
+                data: {"filefield": file, "userId": userId}
+            }).then(function(response) {
+                console.log(response);
+                $state.reload();
+            },
+            function(error) {
+                toastr.error("Problem uploading photo")
+            })
         }
     }
 })();

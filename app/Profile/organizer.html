@@ -26,8 +26,9 @@
 				<!-- image upload -->
 				<div class="well">
 					<form align="center">
-						<img id="myImg" src="../app/styles/pictures/Eventive4.png"></img>
-						<input type='file' accept="image/*"></input>
+						<img id="myImg" height="230" width="230" ng-src="https://appventful.herokuapp.com/api/files/{{vm.id}}" onerror="this.src='https://appventful.herokuapp.com/api/files'" alt="your image" />
+
+						<button class="button" ngf-select="upload($file, vm.id)">Upload on file select</button>
 					</form>
 				</div>
 			</div>
