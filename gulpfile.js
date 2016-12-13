@@ -24,6 +24,7 @@ var paths = ['./bower_components/','./app/*.js','./app/**/*.css'];
 
 gulp.task('injectables', function() {
     var sources = gulp.src(paths, {read: false});
+    console.log("Flag 1");
     return gulp.src('index.html')
         .pipe(wiredep())
         .pipe(inject(sources))
@@ -84,7 +85,7 @@ gulp.task('serveprod', function() {
     port: process.env.PORT || 5000, // localhost:5000
     livereload: false
   });
-  console.log(process.env.NODE_ENV);
+  console.log(process.env.PORT);
 });
 
 gulp.task('connected', function() {
