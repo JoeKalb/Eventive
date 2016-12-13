@@ -53,7 +53,10 @@ gulp.task('connect', function() {
 });
 
 gulp.task('app', function(){
-    var port = process.env.PORT || 8080;
+    var port = 8080;
+    if (process.env.NODE_ENV === 'production') {
+        port = process.env.PORT;
+    }
     console.log("gulp port: " + port);
     var options = {
         uri: 'http://localhost:' + port,
