@@ -88,7 +88,9 @@ gulp.task('serveprod', function() {
 });
 
 gulp.task('connected', function() {
-  connect.server();
+  connect.server({
+    port: process.env.PORT
+  });
 });
 
 gulp.task('serve', ['connect', 'watch', 'injectables', 'app']);
