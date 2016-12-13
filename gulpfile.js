@@ -52,6 +52,13 @@ gulp.task('connect', function() {
     })
 });
 
+gulp.task('liveConnect', function() {
+    connect.server({
+        root: '.',
+        livereload: false
+    })
+})
+
 gulp.task('app', function(){
     var port = 8080;
     if (process.env.NODE_ENV === 'production') {
@@ -75,3 +82,7 @@ gulp.task('start', function () {
 });
 
 gulp.task('serve', ['connect', 'watch', 'injectables', 'app']);
+
+gulp.task('live', ['liveConnect', 'watch', 'injectables', 'app']);
+
+
