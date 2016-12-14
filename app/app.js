@@ -10,8 +10,8 @@
             'ngFileUpload'
         ]);
 
-        app.value ('wineServer', 'https://appventful.herokuapp.com/api/');
-        //app.value ('wineServer', 'http://localhost:3000/api/');
+        //app.value ('wineServer', 'https://appventful.herokuapp.com/api/');
+        app.value ('wineServer', 'http://localhost:3000/api/');
         app.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider',  function($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
         	$urlRouterProvider.otherwise('/home');
 
