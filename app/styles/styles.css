@@ -1,6 +1,10 @@
 /*Styling broken down in sections*/
 
 /*global styling starts*/
+	* {
+		margin: 0px;
+		padding: 0px;
+	}
 	.panel-default {
 		box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.7);
 	}
