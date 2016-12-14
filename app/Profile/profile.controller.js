@@ -68,6 +68,26 @@
             })
         }
 
+        function setStorage(key, value) {
+            storageFactory.setLocalStorage(key, value)
+                console.log("User info successfully stored");
+                return;
+        }
+
+        vm.editProfile = function(userId, token, name, email, number) {
+            imageFactory.editProfile(userId, token, name, email, number).then(
+                function(response) {
+                    console.log(response);
+                    setStorage('userInfo', response);
+                    vm.name = response.name;
+                    vm.email = response.email;
+                    vm.number = response.number;
+                    $state.reload();
+                }, 
+                function(error) {
+                    toastr.error("There was a problem submitting the edit");
+                })
+        }
         
     }
 

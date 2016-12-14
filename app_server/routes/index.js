@@ -38,6 +38,7 @@ router.delete('/events/:event_id', auth, ctrlEvent.deleteEvent); // only for org
 // messages
 router.get('/messages', ctrlMessages.testTwilio);
 router.post('/messages/:event_id', auth, ctrlMessages.sendGroupMessages);
+router.post('/messages/:event_id/attendee', auth, ctrlMessages.sendSingleMessage);
 
 // files
 router.post('/files', ctrlFiles.postFile);

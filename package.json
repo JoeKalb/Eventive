@@ -8,9 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "heroku-prebuild": "bower cache clean && bower install",
-    "postinstall": "gulp live"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",

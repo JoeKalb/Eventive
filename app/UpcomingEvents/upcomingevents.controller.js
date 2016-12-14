@@ -12,6 +12,7 @@
         var vm = this;
         vm.title = 'upcomingEventsController';
         vm.events;
+        vm.map = { center: { latitude: 32.716851, longitude:  -117.165237 }, zoom: 15 };
         activate();
 
         ////////////////
@@ -29,6 +30,19 @@
             vm.number = storageFactory.getLocalStorage('userInfo').number;
             vm.token = storageFactory.getLocalStorage('token');
             console.log(vm.token);
+
+
+        }
+
+        vm.alreadyInEvent = function(userId, attendees) {
+            var len = attendees.length;
+            for (var i = 0; i < len; i++) {
+                if (userId === attendees[i].attendeeid) {
+                    console.log("user attending this event");
+                    return true
+                }
+            }
+            return false;
         }
 
         vm.addToEvent = function(eventId) {
@@ -41,6 +55,16 @@
                 })
         }
 
-        vm.map = { center: { latitude: 32.716851, longitude:  -117.165237 }, zoom: 15 };
+        vm.sendUserReminder = function(eventId, eventName, address, date) {
+            EventsFactory.sendUserMessage(vm.name, vm.number, eventName, address, date, vm.token, eventId).then(
+                function(response) {
+                    console.log(response);
+                }, 
+                function(error) {
+                    toastr.error(error);
+                });
+        }
+
+        
     }
 })();

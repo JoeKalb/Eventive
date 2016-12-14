@@ -26,8 +26,9 @@
 					<a ui-sref="home" id="btn"><li>HOME</li></a>
 					<a ui-sref="aboutus" id="btn"><li>ABOUT US</li></a>
 					<a ui-sref="upcomingevents" id="btn"><li>UPCOMING EVENTS</li></a>
-<!-- 					<a ui-sref="gallery" id="btn"><li>GALLERY</li></a> -->
-					<a ui-sref="login" id="btn"><li>SIGN UP</li></a>
+					<!--<a ui-sref="gallery" id="btn"><li>GALLERY</li></a> -->
+					<a ui-sref="login" id="btn" ng-show="vm.id === undefined"><li>SIGN IN</li></a>
+					<a ui-sref="home" id="btn" ng-hide="vm.id === undefined"><li>LOG OUT</li></a>
 				</ul>
 				<div class="handle">MENU&nbsp;&nbsp;&nbsp;&#9776;</div>
 			</div>
