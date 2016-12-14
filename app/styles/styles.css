@@ -44,7 +44,7 @@
 	nav ul li {
 		display: inline-block;
 		padding: 20px 0 20px 2px;
-		margin-top: 20px;
+		margin-top: 21px;
 		margin-left: 0px;
 	}
 	section {
@@ -116,6 +116,26 @@
 		font-size: 200px;
 		color: #ee61e2 ;
 	}
+/*	.fadeInLeft1 {
+		-webkit-animation-name: fadeInLeft;
+		animation-name: fadeInLeft;
+		-webkit-animation-duration: 3s;
+		animation-duration: 3s;
+	}
+	.fadeInRight {
+		-webkit-animation-name: fadeInRight;
+		animation-name: fadeInRight;
+		-webkit-animation-duration: 3s;
+		animation-duration: 3s;
+		animation-delay: 5s;
+	}
+	.fadeInLeft2 {
+		-webkit-animation-name: fadeInLeft;
+		animation-name: fadeInLeft;
+		-webkit-animation-duration: 3s;
+		animation-duration: 3s;
+		animation-delay: 10s;
+	}*/
 /*home screen styling ends*/
 
 
@@ -415,15 +435,16 @@
 		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);		
 	}
 	#eventBtn1 {
-		box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
-
+		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 		width: 150px;
 		max-width: 90%;
+		margin-top: 10px;
 	}
 	#eventBtn2 {
-		box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
+		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 		width: 150px;
 		max-width: 90%;
+		margin-top: 10px;
 	}
 	#eventInput {
 		height: ;
