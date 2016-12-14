@@ -21,7 +21,7 @@
         return service;
         
         ////////////////
-        function sendMessage(eventId, eventName, eventAddress, eventAttendees, token) {
+        function sendMessage(eventId, eventName, eventAddress, eventAttendees, token, date) {
             var defer = $q.defer();
 
             $http({
@@ -35,7 +35,8 @@
                     "eventId": eventId,
                     "eventName": eventName,
                     "eventAddress": eventAddress,
-                    "attendees": eventAttendees
+                    "attendees": eventAttendees,
+                    "date": date
                 }
             }).then(function(response) {
                 if (typeof response.data === 'object') {

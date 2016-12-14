@@ -25,7 +25,7 @@ module.exports.sendGroupMessages = function(req, res) {
 		client.sendMessage({
 			to: '+1' + req.body.attendees[i].attendeenumber,
 			from: '+16193040115',
-			body: 'Hi ' + req.body.attendees[i].attendeename + "! Thank you for checking into " + req.body.eventName + ". We hope you have a wonderful time."
+			body: 'Hi ' + req.body.attendees[i].attendeename + "! This is a reminder for " + req.body.eventName + "on" + req.body.date +". We hope to see you there."
 		});
 	}
 	res.status(200).json({"Events": "Have been sent"});
