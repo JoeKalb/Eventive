@@ -16,11 +16,43 @@
             addEvent: addEvent,
             removeEvent: removeEvent,
             editEvent: editEvent, 
-            sendMessage: sendMessage
+            sendMessage: sendMessage, 
+            sendUserMessage: sendUserMessage
         };
         return service;
         
         ////////////////
+        function sendUserMessage(name, number, eventName, eventAddress, date, token, eventId) {
+            var defer = $q.defer();
+
+            $http({
+                method: 'POST', 
+                url: wineServer + 'messages/' + eventId + '/attendee',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                },
+                data: {
+                    "name": name,
+                    "number": number,
+                    "eventName": eventName,
+                    "address": eventAddress,
+                    "date": date
+                }
+            }).then(function(response) {
+                if (typeof response === 'object') {
+                    defer.resolve(response);
+                } else {
+                    defer.reject(response);
+                }
+            },
+            function(error) {
+                defer.reject(error);
+            });
+
+            return defer.promise;
+        }
+
         function sendMessage(eventId, eventName, eventAddress, eventAttendees, token, date) {
             var defer = $q.defer();
 
@@ -39,8 +71,8 @@
                     "date": date
                 }
             }).then(function(response) {
-                if (typeof response.data === 'object') {
-                    defer.resolve(response.data);
+                if (typeof response === 'object') {
+                    defer.resolve(response);
                 } else {
                     defer.reject(response);
                 }
