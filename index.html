@@ -16,7 +16,7 @@
 
 <body>
 	<!-- static top navigation bar -->
-	<header>
+	<header ng-controller="indexController as vm">
 		<nav class="navbar navbar-default navbar-fixed-top row" id="navbar_top">
 			<div class="col-md-2 col-md-offset-1">
 				<img src="../app/styles/pictures/Eventive4.png" id="logo" ui-sref="home">
@@ -26,8 +26,8 @@
 					<a ui-sref="home" id="btn"><li>HOME</li></a>
 					<a ui-sref="aboutus" id="btn"><li>ABOUT US</li></a>
 					<a ui-sref="upcomingevents" id="btn"><li>UPCOMING EVENTS</li></a>
-					<a ui-sref="login" id="btn" ng-show="!storageFactory.getLocalStorage('userInfo')"><li>SIGN IN</li></a>
-					<a ui-sref="home" id="btn" ng-show="!storageFactory.getLocalStorage('userInfo')"><li>LOG OUT</li></a>
+					<a ui-sref="login" id="btn" ng-show='vm.id == "0"'><li>SIGN IN</li></a>
+					<a ui-sref="home" id="btn" ng-show='vm.id != "0"'><li>LOG OUT</li></a>
 				</ul>
 				<div class="handle">MENU&nbsp;&nbsp;&nbsp;&#9776;</div>
 			</div>
@@ -48,6 +48,7 @@
 			</div>
 		</div>
 	</footer>
+
 <script src='//maps.googleapis.com/maps/api/js?key=AIzaSyBmXju8CHIaQIDu3DJIbrfj2oknuJhnNT4'></script>
 <!-- bower:js -->
 <script src="bower_components/angular/angular.js"></script>
@@ -86,5 +87,36 @@
 <script type="text/javascript" src="node_modules/moment/moment.js"></script>
 <script type="text/javascript" src="node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
 <script type="text/javascript" src="node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.templates.js"></script>
+<script>
+	(function() {
+	    'use strict';
+	
+	    angular
+	        .module('app')
+	        .controller('indexController', indexController);
+	
+	    indexController.$inject = ['storageFactory', '$state'];
+	    
+	    /* @ngInject */
+	    function indexController(storageFactory, $state) {
+	        var vm = this;
+	        vm.title = 'indexController';
+	
+	        activate();
+	
+	        ////////////////
+	
+	        function activate() {
+	        	if ( !storageFactory.getLocalStorage('userInfo') ) {
+                	console.log("User not signed in yet");
+                	vm.id = "0";
+            	}
+            	console.log(vm.id);
+	        }
+	        
+	    }
+	})();
+</script>
+
 </body>
 </html>

@@ -23,7 +23,7 @@
             vm.number = storageFactory.getLocalStorage('userInfo').number;
             vm.name = storageFactory.getLocalStorage('userInfo').name;
             vm.id = storageFactory.getLocalStorage('userInfo')._id;
-            vm.token = storageFactory.getLocalStorage('token');
+            vm.token = storageFactory.getLocalStorage('token');           
 
             EventsFactory.getEventsByProfile(vm.id, vm.token).then(
                 function(response) {

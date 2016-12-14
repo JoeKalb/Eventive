@@ -12,6 +12,7 @@
         var vm = this;
         vm.title = 'organizerController';
         vm.editor = 'static';
+
         activate();
         
 
