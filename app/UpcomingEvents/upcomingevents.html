@@ -63,7 +63,7 @@
 							<h3 id="eventTitle">{{event.eventname}}</h3>
 							<div ng-switch="vm.alreadyInEvent(vm.id, event.attendees)">
 								<button type="button" class="btn btn-info btn-lg btn-block" ng-click="vm.addToEvent(event._id)" id="mapBtn" ng-switch-default >Sign Up Now!</button>
-								<button type="button" class="btn btn-info btn-lg btn-block" ng-click="vm.sendUserReminder(event._id, event.eventname, event.address, event.datetime)" id="mapBtn" ng-switch-when="true">Send Reminder</button>
+								<button type="button" class="btn btn-info btn-lg btn-block" ng-click="vm.sendUserReminder(event._id, event.eventname, event.address, event.datetime)" id="mapBtn" ng-switch-when="1">Send Reminder</button>
 							</div>
 								<ul id="uevents_box">
 									<li><p><b>Company Name:</b> {{event.companyname}}</p></li>
