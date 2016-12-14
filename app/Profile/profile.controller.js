@@ -11,6 +11,7 @@
     function profileController(toastr, storageFactory, EventsFactory, $state, $stateParams, imageFactory, Upload, $scope, wineServer) {
         var vm = this;
         vm.title = 'profileController';
+        vm.editor = 'static';
  
         activate();
 

@@ -25,7 +25,7 @@
 
                     vm.events = response;
                 });
-            
+
             if ( !storageFactory.getLocalStorage('userInfo') ) {
                 console.log("User not signed in yet");
                 vm.id = "0";
@@ -61,6 +61,7 @@
                         console.log(response);
 
                         vm.updatedEvent = response;
+                        $state.reload();
                     })
             } else {
                 console.log("This shouldn't be seen");
