@@ -116,26 +116,7 @@
 		font-size: 200px;
 		color: #ee61e2 ;
 	}
-/*	.fadeInLeft1 {
-		-webkit-animation-name: fadeInLeft;
-		animation-name: fadeInLeft;
-		-webkit-animation-duration: 3s;
-		animation-duration: 3s;
-	}
-	.fadeInRight {
-		-webkit-animation-name: fadeInRight;
-		animation-name: fadeInRight;
-		-webkit-animation-duration: 3s;
-		animation-duration: 3s;
-		animation-delay: 5s;
-	}
-	.fadeInLeft2 {
-		-webkit-animation-name: fadeInLeft;
-		animation-name: fadeInLeft;
-		-webkit-animation-duration: 3s;
-		animation-duration: 3s;
-		animation-delay: 10s;
-	}*/
+
 /*home screen styling ends*/
 
 
@@ -186,8 +167,9 @@
 	}
 	/* Slideshow container */
 	.slideshow-container {
-		max-width: 825px;
-		max-height: 400px;
+		min-width: 55%;
+		max-width: 720px;
+		max-height: 450px;
 		position: relative;
 		z-index: 2;
 		margin: auto;
