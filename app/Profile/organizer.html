@@ -13,6 +13,8 @@
 		height: 5em;
 	}
 
+
+
 	@media screen and (max-width: 991px) {
 		body{
 			background-image: url("../app/styles/pictures/lvlaptop.jpeg");
@@ -80,10 +82,23 @@
 							<th>NOTIFICATION</th>
 						</tr>
 						<!-- upcoming events to be setup in ng-repeat to populte events -->
-						<tr ng-repeat="event in vm.events">
+						<tr ng-repeat="event in vm.events" ng-init="tooltip=false">
 							<td>{{event.eventname}}</td>
 							<td>{{event.address}}</td>
-							<td>{{event.attendees.length}}</td>
+							<td ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">
+								{{event.attendees.length}}
+								<div class="tooltip" ng-show="tooltip">
+								<div class="tooltip" ng-show="tooltip">Hi..Welcome to Angular JS World.</div>
+								<span>
+									<table>
+										<tr ng-repeat="attendee in event.attendees.length">
+											<td>{{attendee.attendeename}}</td>
+											<td><button>Check In</button></td>
+										</tr>
+									</table>
+								</span>
+								</div>
+							</td>
 							<td>{{event.datetime | date:'EEEE, MMMM d, y h:mm a' }}</td>
 							<!-- remove upcoming event button -->
 							<td><button type="button" class="btn btn-info" id="btn-sm" ng-click="vm.deleteEvent(event._id, vm.token)">Remove</button>
@@ -126,7 +141,7 @@
 				<div class="well clearfix">
 					<div class="form-group">
 						<h2>WHEN WILL IT BE</h2>
-						<label class="headings">DATE AND TIME</label>
+						<label class="headings" style="margin-bottom: 20px;">DATE AND TIME</label>
 						<datetimepicker data-ng-model="vm.date" class="col-md-6" id="date"></datetimepicker>
 						<p>{{ vm.date | date:'EEEE, MMMM d, y h:mm a' }}</p>
 					</div>
@@ -136,7 +151,7 @@
 					</div>
 				</div>
 			</div>
-
+		
 				</div>
 			</div>
 		</div> <!-- /row -->
