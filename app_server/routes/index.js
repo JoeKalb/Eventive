@@ -42,10 +42,12 @@ router.post('/messages/:event_id/attendee', auth, ctrlMessages.sendSingleMessage
 
 // files
 router.post('/files', ctrlFiles.postFile);
+router.get('/files/everything', ctrlFiles.allFileDetails);
 router.get('/files/:userId', ctrlFiles.read);
 router.get('/files', ctrlFiles.noImg);
 router.get('/files/:eventId/painting', ctrlFiles.paintingGet);
 router.post('/files/:eventId/painting', ctrlFiles.paintingPost);
-router.get('/files/all', ctrlFiles.allFiles)
+router.delete('/files/:fileId', ctrlFiles.delete);
+
 
 module.exports = router;

@@ -66,7 +66,7 @@ module.exports.read = function(req, res) {
 }
 
 module.exports.noImg = function(req, res) {
-
+	console.log("getting here");
 	gfs.files.find({ 'metadata.userId' : "0" }).toArray(function (err, files) {
  
  	    if(files.length===0){
@@ -160,16 +160,22 @@ module.exports.paintingPost = function (req, res) {
     writeStream.end();
 }
 
-module.exports.allFiles = function(req, res) {
-	gfs.files.find({ 'metadata.userId' : "0" }).then(function(err, result) {
+module.exports.allFileDetails = function(req, res) {
+	// get all files with the data
+	gfs.files.find({}).toArray(function(err, file) {
 
-		if(files.length===0){
+		if(file.length===0){
 			return res.status(400).send({
 				message: "File isn't found"
 			});
  	    }
-
-		if (err) res.send(err);
-		else res.status(200).json(result);
+ 	    if (err) res.send(err);
+		return res.status(200).json(file);
 	})
+}
+
+module.exports.delete = function(req, res) {
+	// remove specific file
+	gfs.chunks.remove({'files_id': req.params.fileId});
+	gfs.files.remove({'_id': req.params.fileId});
 }
