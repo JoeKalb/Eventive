@@ -46,5 +46,6 @@ router.get('/files/:userId', ctrlFiles.read);
 router.get('/files', ctrlFiles.noImg);
 router.get('/files/:eventId/painting', ctrlFiles.paintingGet);
 router.post('/files/:eventId/painting', ctrlFiles.paintingPost);
+router.get('/files/all', ctrlFiles.allFiles)
 
 module.exports = router;

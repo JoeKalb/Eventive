@@ -159,3 +159,17 @@ module.exports.paintingPost = function (req, res) {
     writeStream.write(part.data);
     writeStream.end();
 }
+
+module.exports.allFiles = function(req, res) {
+	gfs.files.find({ 'metadata.userId' : "0" }).then(function(err, result) {
+
+		if(files.length===0){
+			return res.status(400).send({
+				message: "File isn't found"
+			});
+ 	    }
+
+		if (err) res.send(err);
+		else res.status(200).json(result);
+	})
+}
