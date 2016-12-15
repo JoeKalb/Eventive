@@ -30,19 +30,18 @@
 	}
 </style>
 
-<div class="container" id="loginBox" ng-cloak>
+<div class="container" id="loginBox">
 	<div class="container">
 		<div class="row row-flex row-flex-wrap">
 			<div class="col-md-6">
 				<!-- image upload -->
-				<div class="well clearfix">
-					<!-- profile picture image box -->
-					<h3><label id="profileName">{{vm.name}}'s</label> Page</h3>
-					<form id="form1">
-						<img id="myImg" height="230" width="230" ng-src="https://appventful.herokuapp.com/api/files/{{vm.id}}" onerror="this.src='https://appventful.herokuapp.com/api/files'" alt="your image" />
-					</form>
-						<button class="button" ngf-select="upload($file, vm.id)">Upload on file select</button>
+				<div class="well">
+					<h2 style="margin:0;padding:0;"><span style="color:black;">{{vm.name}}'s</span> PAGE</h2>
 				</div>
+				<form>
+				<!-- profile picture image box -->
+					<img id="myImg" height="250" width="250" ng-src="https://appventful.herokuapp.com/api/files/{{vm.id}}" onerror="this.src='https://appventful.herokuapp.com/api/files'" alt="your image" ngf-select="upload($file, vm.id)" placeholder="Add a profile picture"/>
+				</form>
 			</div>
 			<!-- profile information -->
 			<div class="col-md-6">
@@ -151,8 +150,7 @@
 						<label class="headings" style="margin-bottom: 20px;">DATE AND TIME</label>
 						<datetimepicker data-ng-model="vm.date" class="col-md-6" id="date"></datetimepicker>
 						<p>{{ vm.date | date:'EEEE, MMMM d, y h:mm a' }}</p>
-					</div>
-					<div>
+		
 						<button ng-click="vm.postNewEvent(vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description, vm.difficulty)" class="btn btn-info" id="eventBtn1">Submit New Event</button>
 						<button ng-click="vm.editEvent(vm.eventId, vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description, vm.difficulty)" class="btn btn-info" id="eventBtn2">Edit Event</button>
 					</div>

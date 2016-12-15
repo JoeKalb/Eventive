@@ -65,7 +65,7 @@
 		color: white;
 		display: none;
 	}
-	@media screen and (max-width: 991px) {
+	@media screen and (max-width: 991px) and (min-width: 320px){
 		nav ul {
 			max-height: 0;
 		}
@@ -152,7 +152,7 @@
 	#logo .btn:focus {
 		outline: none;
 	}
-	@media screen and (max-width: 991px) {
+	@media screen and (max-width: 991px) and (min-width: 320px) {
 		#logo {
 			margin-left: 40%;
 			padding-bottom: 5px;
@@ -369,12 +369,12 @@
 
 
 /*profile page styling starts*/
-	#form1 {
-		border-radius: 50%;
-	}
 	#myImg {
 		border-radius: 50%;
-		align-content: center;
+		margin-bottom: 10px;
+		margin-left: 27%;
+		cursor:pointer;
+		box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
 	}
 	#pic-sm {
 		width: 50%;
@@ -386,7 +386,8 @@
 	}
 	.headings {
 		font-weight: bold;
-		font-size: 20px;	}
+		font-size: 20px;	
+	}
 	#pevents_table {
 		width: 100%;
 		max-width: 90%
@@ -407,10 +408,6 @@
 	#loginBox {
 		padding-top: 3%;
 	}
-	#profileName {
-		color: #ee61e2;
-		font-weight: bold;
-	}
 	#btn-sm {
 		width: 100%;
 		margin: 1px;
@@ -425,17 +422,13 @@
 		margin: 1px;
 		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);		
 	}
-	#eventBtn1 {
-		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-		width: 150px;
-		max-width: 90%;
-		margin-top: 10px;
-	}
+	#eventBtn1,
 	#eventBtn2 {
 		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 		width: 150px;
 		max-width: 90%;
-		margin-top: 10px;
+		margin: 5px 5px;
+		float: left;
 	}
 	h2 {
 		color: #ee61e2;
