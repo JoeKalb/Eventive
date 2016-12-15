@@ -10,7 +10,7 @@
 	}
 	
 	textarea {
-		height: 3.4em;
+		height: 5em;
 	}
 
 	@media screen and (max-width: 991px) {
@@ -23,7 +23,7 @@
 		}
 
 		textarea {
-			height: 5em;
+			height: 10em;
 		}
 	}
 </style>
@@ -55,9 +55,9 @@
 							<button type="button" class="btn btn-info" id="editBtn" style="float: right" ng-click="vm.editor = 'editor'">Edit</button>
 						</ul>
 						<ul id="proInfo" ng-switch-when="editor">
-							<li><p><label class="headings">NAME:</label> <input type="text" ng-model="vm.name"></p></li>
-							<li><p><label class="headings">EMAIL:</label> <input type="text" ng-model="vm.email"></p></li>
-							<li><p><label class="headings">PHONE NUMBER:</label> <input type="text" ng-model="vm.number"></p></li>
+							<li><p><label class="headings">NAME:</label><input type="text" ng-model="vm.name"></p></li>
+							<li><p><label class="headings">EMAIL:</label><input type="text" ng-model="vm.email"></p></li>
+							<li><p><label class="headings">PHONE NUMBER:</label><input type="text" ng-model="vm.number"></p></li>
 						<!-- edit profile button -->
 							<button type="button" class="btn btn-info" id="editBtn" style="float: right" 
 								ng-click="vm.editProfile(vm.id, vm.token, vm.name, vm.email, vm.number);
