@@ -106,7 +106,8 @@
 													vm.address=event.address;
 													vm.date=event.datetime;
 													vm.description=event.description;
-													vm.eventId=event._id"
+													vm.eventId=event._id;
+													vm.difficulty=event.difficulty;"
 													ng-model="edit" id="btn-sm">Edit</button>
 								<button class="btn btn-info" id="btn-sm" ngf-select="uploadPainting($file, event._id)">Image</button>
 							</td>
@@ -133,6 +134,13 @@
 						<label class="headings">DETAILS</label>
 						<textarea type="text" placeholder="Add a description for the event" ng-model="vm.description"></textarea>
 					</div>
+
+					<div class="form-group" id="difficultyInput">
+						<label class="headings">DIFFICULTY</label>
+						<select ng-model="vm.difficulty" placeholder="Select a difficulty" >
+							<option ng-repeat="level in vm.levels"  value="{{level}}">{{level}}</option>
+						</select>
+					</div>
 				</div>
 			</div>
 				
@@ -145,8 +153,8 @@
 						<p>{{ vm.date | date:'EEEE, MMMM d, y h:mm a' }}</p>
 					</div>
 					<div>
-						<button ng-click="vm.postNewEvent(vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)" class="btn btn-info" id="eventBtn1">Submit New Event</button>
-						<button ng-click="vm.editEvent(vm.eventId, vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description)" class="btn btn-info" id="eventBtn2">Edit Event</button>
+						<button ng-click="vm.postNewEvent(vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description, vm.difficulty)" class="btn btn-info" id="eventBtn1">Submit New Event</button>
+						<button ng-click="vm.editEvent(vm.eventId, vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description, vm.difficulty)" class="btn btn-info" id="eventBtn2">Edit Event</button>
 					</div>
 				</div>
 			</div>

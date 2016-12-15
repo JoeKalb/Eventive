@@ -13,7 +13,7 @@
         vm.title = 'organizerController';
         vm.editor = 'static';
         vm.date = new Date();
-
+        vm.levels = ['NOVICE', 'INTERMEDIATE', 'ADVANCED', 'REMBRANDT'];
         activate();
         
 
@@ -38,14 +38,14 @@
                 })
         }
 
-        vm.postNewEvent = function(eventName, companyName, companyid, datetime, address, token, long, lat, description) {
-
+        vm.postNewEvent = function(eventName, companyName, companyid, datetime, address, token, long, lat, description, diff) {
+            console.log(diff);
             EventsFactory.getCoordFromAddress(address).then(
                 function(response) {
                     vm.long = response.results[0].geometry.location.lng;
                     vm.lat = response.results[0].geometry.location.lat;
 
-                    EventsFactory.addEvent(eventName, companyName, companyid, datetime, address, token, vm.long, vm.lat, description).then(
+                    EventsFactory.addEvent(eventName, companyName, companyid, datetime, address, token, vm.long, vm.lat, description, diff).then(
                         function(response) {
                             console.log(response);
                             $state.reload();
@@ -71,7 +71,7 @@
                 });
         }
 
-        vm.editEvent = function(eventId, eventName, companyName, companyid, datetime, address, token, long, lat, description) {
+        vm.editEvent = function(eventId, eventName, companyName, companyid, datetime, address, token, long, lat, description, diff) {
             
             EventsFactory.getCoordFromAddress(address).then(
                 function(response) {
@@ -79,7 +79,7 @@
                     //vm.long = response.result[0].geometry.location.lng;
                     //vm.lat = response.result[0].geometry.location.lat;
                     console.log(vm.lat);
-                    EventsFactory.editEvent(eventId, eventName, companyName, companyid, datetime, address, token, long, lat, description).then(
+                    EventsFactory.editEvent(eventId, eventName, companyName, companyid, datetime, address, token, long, lat, description, diff).then(
                         function(response) {
                             console.log(response);
                             $state.reload();
