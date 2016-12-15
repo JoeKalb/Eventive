@@ -18,7 +18,8 @@
         ////////////////
 
         function activate() {
-            if (storageFactory.getLocalStorage('userInfo').role === "organizer") $state.go('profile');
+            console.log("here");
+            if (storageFactory.getLocalStorage('userInfo').role == "organizer") $state.go('organizer');
             vm.email = storageFactory.getLocalStorage('userInfo').email;
             vm.password = storageFactory.getLocalStorage('userInfo').password;
             vm.number = storageFactory.getLocalStorage('userInfo').number;
