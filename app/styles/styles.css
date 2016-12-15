@@ -185,7 +185,7 @@
 		padding: 16px;
 		color: #ee61e2 ;
 		font-weight: bold;
-		font-size: 18px;
+		font-size: 20px;
 		transition: 0.6s ease;
 		border-radius: 0 3px 3px 0;
 	}
@@ -219,17 +219,17 @@
 	/* The dots/bullets/indicators */
 	.dot {
 		cursor:pointer;
-		height: 13px;
-		width: 13px;
+		height: 20px;
+		width: 20px;
 		margin: 0 2px;
-		background-color: #bbb;
+		background-color: white;
 		border-radius: 50%;
 		display: inline-block;
 		transition: background-color 0.6s ease;
 		position: relative;
 	}
 	.active, .dot:hover {
-		background-color: #717171;
+		background-color: #ee61e2;
 	}
 	/* Fading animation */
 	.fade {
@@ -428,9 +428,6 @@
 		max-width: 90%;
 		margin-top: 10px;
 	}
-	#eventInput {
-		height: ;
-	}
 	h2 {
 		color: #ee61e2;
 		text-align: center;
@@ -465,14 +462,14 @@
 	}
 	#registerBox {
 		width: 800px;
-		padding-top: 2%;
+		padding-top: 1%;
 	}
 	#regBtn {
 		box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
 		width: 150px;
 	}
 	#regPanel {
-		padding: 50px;
+		padding: 40px;
 	}
 /*register page styling ends*/
 
