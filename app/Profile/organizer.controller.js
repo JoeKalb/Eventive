@@ -20,6 +20,7 @@
         ////////////////
 
         function activate() {
+            if (storageFactory.getLocalStorage('userInfo').role === "attendee") $state.go('profile');
         	vm.email = storageFactory.getLocalStorage('userInfo').email;
             vm.password = storageFactory.getLocalStorage('userInfo').password;
             vm.number = storageFactory.getLocalStorage('userInfo').number;
