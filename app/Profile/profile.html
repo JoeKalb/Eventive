@@ -37,6 +37,7 @@
 			<!-- profile information box -->
 			<div class="col-md-6">
 				<div class="well clearfix">
+					<h2>PROFILE INFORMATION</h2>
 					<div ng-switch="vm.editor">
 						<ul id="proInfo" ng-switch-when="static">
 							<li><p><label class="headings">NAME:</label> {{vm.name}}</p></li>
@@ -66,13 +67,15 @@
 							<th>NAME</th>
 							<th>ADDRESS</th>
 							<th>DATE</th>
-							<th>UPDATE</th>
+							<th>TEXT INFO</th>
+							<th>DELETE</th>
 						</tr>
 						<!-- upcoming events to be setup in ng-repeat to populte events -->
 						<tr ng-repeat="event in vm.events">
 							<td>{{event.eventname}}</td>
 							<td>{{event.address}}</td>
 							<td>{{event.datetime | date:'EEEE, MMMM d, y h:mm a' }}</td>
+							<td><button type="button" class="btn btn-info" id="btn-sm" ng-click="vm.sendUserReminder(event._id, event.eventname, event.address, event.datetime)" id="mapBtn">Send Reminder</button></td>
 							<!-- remove upcoming event button -->
 							<td><button type="button" class="btn btn-info" id="btn-sm" style="float: right" ng-click="vm.removeEvent(event._id)">Remove Event</button></td>
 						</tr>

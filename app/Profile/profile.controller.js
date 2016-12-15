@@ -89,6 +89,17 @@
                     toastr.error("There was a problem submitting the edit");
                 })
         }
+
+        vm.sendUserReminder = function(eventId, eventName, address, date) {
+            console.log("This is working")
+            EventsFactory.sendUserMessage(vm.name, vm.number, eventName, address, date, vm.token, eventId).then(
+                function(response) {
+                    console.log(response);
+                }, 
+                function(error) {
+                    toastr.error(error);
+                });
+        }
         
     }
 

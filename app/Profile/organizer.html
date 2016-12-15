@@ -8,6 +8,10 @@
 		background-size: cover;
 		background-position: center;
 	}
+	
+	textarea {
+		height: 3.4em;
+	}
 
 	@media screen and (max-width: 991px) {
 		body{
@@ -17,10 +21,14 @@
 			background-size: cover;	
 			background-position: center;
 		}
+
+		textarea {
+			height: 5em;
+		}
 	}
 </style>
 
-<div class="container" id="loginBox">
+<div class="container" id="loginBox" ng-cloak>
 	<div class="container">
 		<div class="row row-flex row-flex-wrap">
 			<div class="col-md-6">
@@ -37,7 +45,7 @@
 			<!-- profile information -->
 			<div class="col-md-6">
 				<div class="well clearfix">
-					<h2>PROFILE INFORMATION</h2>
+					<h2>ORGANIZER INFORMATION</h2>
 					<div ng-switch="vm.editor">
 						<ul id="proInfo" ng-switch-when="static">
 							<li><p><label class="headings">NAME:</label> {{vm.name}}</p></li>
