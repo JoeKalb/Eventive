@@ -20,6 +20,7 @@
         ////////////////
 
         function activate() {
+            if (storageFactory.getLocalStorage('userInfo').role == "attendee") $state.go('profile');
         	vm.email = storageFactory.getLocalStorage('userInfo').email;
             vm.password = storageFactory.getLocalStorage('userInfo').password;
             vm.number = storageFactory.getLocalStorage('userInfo').number;
@@ -107,6 +108,21 @@
             Upload.upload({
                 url: wineServer + 'files',
                 data: {"filefield": file, "userId": userId}
+            }).then(function(response) {
+                console.log(response);
+                $state.reload();
+            },
+            function(error) {
+                toastr.error("Problem uploading photo")
+            })
+        }
+
+        $scope.uploadPainting = function(file, eventId) {
+            Upload.upload({
+                url: wineServer + 'files/' + eventId + '/painting', 
+                data: {
+                    "filefield": file
+                }
             }).then(function(response) {
                 console.log(response);
                 $state.reload();

@@ -44,5 +44,7 @@ router.post('/messages/:event_id/attendee', auth, ctrlMessages.sendSingleMessage
 router.post('/files', ctrlFiles.postFile);
 router.get('/files/:userId', ctrlFiles.read);
 router.get('/files', ctrlFiles.noImg);
+router.get('/files/:eventId/painting', ctrlFiles.paintingGet);
+router.post('/files/:eventId/painting', ctrlFiles.paintingPost);
 
 module.exports = router;
