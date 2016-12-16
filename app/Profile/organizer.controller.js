@@ -5,10 +5,10 @@
         .module('app')
         .controller('organizerController', organizerController);
 
-    organizerController.$inject = ['toastr', 'storageFactory', 'EventsFactory', '$state', '$stateParams', 'Upload', '$scope', 'wineServer', 'imageFactory'];
+    organizerController.$inject = ['toastr', 'storageFactory', 'EventsFactory', '$state', '$stateParams', 'Upload', '$scope', 'wineServer', 'imageFactory', '$location', '$anchorScroll'];
     
     /* @ngInject */
-    function organizerController(toastr, storageFactory, EventsFactory, $state, $stateParams, Upload, $scope, wineServer, imageFactory) {
+    function organizerController(toastr, storageFactory, EventsFactory, $state, $stateParams, Upload, $scope, wineServer, imageFactory, $location, $anchorScroll) {
         var vm = this;
         vm.title = 'organizerController';
         vm.editor = 'static';
@@ -38,6 +38,11 @@
                 function(error) {
                     toastr.error("Something went wrong in the profile controller.")
                 })
+        }
+
+        $scope.goToEditor = function() {
+            $location.hash('editor');
+            $anchorScroll;
         }
 
         vm.postNewEvent = function(eventName, companyName, companyid, datetime, address, token, long, lat, description, diff) {
@@ -77,11 +82,10 @@
             
             EventsFactory.getCoordFromAddress(address).then(
                 function(response) {
-                    console.log("no problem yet")
-                    //vm.long = response.result[0].geometry.location.lng;
-                    //vm.lat = response.result[0].geometry.location.lat;
-                    console.log(lat);
-                    EventsFactory.editEvent(eventId, eventName, companyName, companyid, datetime, address, token, long, lat, description, diff).then(
+                    console.log(response);
+                    vm.long = response.results[0].geometry.location.lng;
+                    vm.lat = response.results[0].geometry.location.lat;
+                    EventsFactory.editEvent(eventId, eventName, companyName, companyid, datetime, address, token, vm.long, vm.lat, description, diff).then(
                         function(response) {
                             console.log(response);
                             $state.reload();
