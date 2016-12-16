@@ -106,7 +106,8 @@
 													vm.date=event.datetime;
 													vm.description=event.description;
 													vm.eventId=event._id;
-													vm.difficulty=event.difficulty;"
+													vm.difficulty=event.difficulty;
+													vm.editUpcomingEvent=true"
 													ng-model="edit" id="btn-sm">Edit</button>
 								<button class="btn btn-info" id="btn-sm" ngf-select="uploadPainting($file, event._id)">Image</button>
 							</td>
@@ -150,9 +151,18 @@
 						<label class="headings" style="margin-bottom: 20px;">DATE AND TIME</label>
 						<datetimepicker data-ng-model="vm.date" class="col-md-6" id="date"></datetimepicker>
 						<p>{{ vm.date | date:'EEEE, MMMM d, y h:mm a' }}</p>
-		
-						<button ng-click="vm.postNewEvent(vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description, vm.difficulty)" class="btn btn-info" id="eventBtn1">Submit New Event</button>
-						<button ng-click="vm.editEvent(vm.eventId, vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description, vm.difficulty)" class="btn btn-info" id="eventBtn2">Edit Event</button>
+						<div ng-switch="vm.editUpcomingEvent">
+							<button ng-click="vm.postNewEvent(vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description, vm.difficulty)" class="btn btn-info" id="eventBtn1" ng-switch-default>Submit New Event</button>
+							<button ng-click="vm.editEvent(vm.eventId, vm.eventName, vm.name, vm.id, vm.date, vm.address, vm.token, vm.long, vm.lat, vm.description, vm.difficulty)" class="btn btn-info" id="eventBtn1" ng-switch-when="true">Edit Event</button>
+						</div>
+						<button ng-click="vm.eventName='';
+										  vm.address='';
+										  vm.date=vm.date2;
+										  vm.description='';
+										  vm.eventId='';
+										  vm.difficulty='';
+										  vm.editUpcomingEvent=false" 
+								class="btn btn-info" id="eventBtn2">Clear</button>
 					</div>
 				</div>
 			</div>

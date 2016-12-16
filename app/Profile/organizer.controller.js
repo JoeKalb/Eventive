@@ -13,7 +13,9 @@
         vm.title = 'organizerController';
         vm.editor = 'static';
         vm.date = new Date();
+        vm.date2 = new Date();
         vm.levels = ['NOVICE', 'INTERMEDIATE', 'ADVANCED', 'REMBRANDT'];
+        vm.editUpcomingEvent = false;
         activate();
         
 
@@ -152,5 +154,6 @@
                     toastr.error("There was a problem submitting the edit");
                 })
         }
+
     }
 })();
