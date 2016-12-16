@@ -5,10 +5,10 @@
         .module('app')
         .controller('upcomingEventsController', upcomingEventsController);
 
-    upcomingEventsController.$inject = ['toastr', 'EventsFactory', 'storageFactory', '$state'];
+    upcomingEventsController.$inject = ['toastr', 'EventsFactory', 'storageFactory', '$state', '$location', '$anchorScroll', '$rootScope'];
     
     /* @ngInject */
-    function upcomingEventsController(toastr, EventsFactory, storageFactory, $state) {
+    function upcomingEventsController(toastr, EventsFactory, storageFactory, $state, $location, $anchorScroll, $rootScope) {
         var vm = this;
         vm.title = 'upcomingEventsController';
         vm.events;
@@ -38,6 +38,11 @@
                 console.log(vm.token);
             }
 
+        }
+
+        $rootScope.goToEvent = function(eventId) {
+            $location.hash(eventId);
+            $anchorScroll();
         }
 
         vm.alreadyInEvent = function(userId, attendees) {

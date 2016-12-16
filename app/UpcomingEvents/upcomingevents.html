@@ -39,7 +39,7 @@
 								<ui-gmap-window 
 									show='false'
 									isIconVisibleOnClick='true'>
-									<p>{{event.eventname}}: {{event.address}}</p>
+									<a ng-click=goToEvent(event._id)>{{event.eventname}}: {{event.address}}</a>
 								</ui-gmap-window>
 							</ui-gmap-marker>
 						</div>	
@@ -62,10 +62,10 @@
 			<div class="container">
 				<div class="row row-flex row-flex-wrap animated fadeIn" ng-repeat="event in vm.events">
 					<!-- panel of upcoming events for people to see -->
-					<div class="col-md-10">
+					<div class="col-md-10" id="{{event._id}}">
 						<div class="well clearfix">
 								<div class="col-md-5 col-md-offset-0">
-							<h3 id="eventTitle">{{event.eventname}}</h3>
+									<h3 id="eventTitle">{{event.eventname}}</h3>
 									<ul id="uevents_box">
 										<li><p><b>Company Name:</b> {{event.companyname}}</p></li>
 										<li><p><b>Address:</b> {{event.address}}</p></li>
@@ -75,7 +75,7 @@
 									</ul>
 								</div>
 								<div class="col-md-5 col-md-offset-2">
-									<img src="https://appventful.herokuapp.com/api/files/{{event._id}}/painting" id="artThumb" height="350" width="350">
+									<img src="https://appventful.herokuapp.com/api/files/{{event._id}}/painting" onerror="this.src='https://appventful.herokuapp.com/api/files/5853591c2417be00118bb47e/painting'" id="artThumb" height="350" width="350">
 								</div>
 							<!-- edit profile button -->
 							<div ng-switch="vm.alreadyInEvent(vm.id, event.attendees)" class="col-md-5">
