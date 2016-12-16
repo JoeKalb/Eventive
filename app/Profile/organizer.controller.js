@@ -80,7 +80,7 @@
                     console.log("no problem yet")
                     //vm.long = response.result[0].geometry.location.lng;
                     //vm.lat = response.result[0].geometry.location.lat;
-                    console.log(vm.lat);
+                    console.log(lat);
                     EventsFactory.editEvent(eventId, eventName, companyName, companyid, datetime, address, token, long, lat, description, diff).then(
                         function(response) {
                             console.log(response);

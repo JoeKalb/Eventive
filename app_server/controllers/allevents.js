@@ -53,6 +53,7 @@ module.exports.eventPost = function(req, res) {
 }
 
 module.exports.editEvent = function(req, res) {
+	console.log(req.body.difficulty);
 	Event.findById(req.params.event_id, function(err, event){
 		event.eventname = req.body.eventname;
 		event.address = req.body.address;
