@@ -116,7 +116,9 @@
 		font-size: 200px;
 		color: #ee61e2 ;
 	}
-
+	#contactIcons {
+		margin-top: 70px;
+	}
 /*home screen styling ends*/
 
 
@@ -435,7 +437,7 @@
 		text-align: center;
 	}
 	#profileEvent:hover {
-		border-bottom: 5px solid;
+		border-bottom: 3px solid;
 		border-color: black;
 	}
 /*profile page styling ends*/
@@ -489,7 +491,7 @@
 	}
 	/*trademark logo*/
 	h5 {
-		padding-top: 35px;
+		padding: 20px;
 		text-align: center;
 	}
 /* footer navbar styling ends
