@@ -61,7 +61,7 @@
                         console.log(response);
 
                         vm.updatedEvent = response;
-                        $state.reload();
+                        $state.go('profile');
                     })
             } else {
                 console.log("This shouldn't be seen");

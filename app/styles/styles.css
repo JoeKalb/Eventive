@@ -434,6 +434,10 @@
 		color: #ee61e2;
 		text-align: center;
 	}
+	#profileEvent:hover {
+		border-bottom: 5px solid;
+		border-color: black;
+	}
 /*profile page styling ends*/
 
 
