@@ -39,8 +39,10 @@
 
                             setStorage('userInfo', response);
                             setStorage('token', token);
-                            $state.go("profile");
+
                             location.reload();
+                            location.reload();
+                            $state.go('profile');
                             
                         })
                 },
