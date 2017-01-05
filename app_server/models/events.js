@@ -37,6 +37,10 @@ var eventSchema = new mongoose.Schema({
 		type: String,
 		required: false
 	},
+	maxcount: {
+		type: String, 
+		required: false
+	},
 	attendees: [{
 		attendeeid: mongoose.Schema.Types.ObjectId,
 		attendeename: String, 
