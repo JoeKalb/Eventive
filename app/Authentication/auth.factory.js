@@ -13,7 +13,7 @@
         return service;
         ////////////////
         // grabs token with option for registration or login
-        function verify(email, password, number, name, type) {
+        function verify(email, password, number, name, gender, type) {
         	var defer = $q.defer();
         	var bodyData;
         	// if login use only email and password, otherwise use all data fields
@@ -28,6 +28,7 @@
         			"name": name,
         			"number": number,
                     "role": "attendee",
+                    "gender": gender,
         			"password": password
         		}
         	}

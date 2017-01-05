@@ -135,12 +135,13 @@
         	return defer.promise;
         }
 
-        function addToEvent(eventId, userId, userName, userNumber, token) {
+        function addToEvent(eventId, userId, userName, userNumber, gender, token) {
             var defer = $q.defer();
             var bodyData = {
                 "attendeeid": userId, 
                 "attendeename": userName, 
                 "attendeenumber": userNumber,
+                "gender": gender,
                 "checkin": false
             }
             console.log(bodyData);

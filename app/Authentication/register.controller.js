@@ -11,6 +11,7 @@
     function registerController(toastr, storageFactory, localStorageService, AuthFactory, $state) {
         var vm = this;
         vm.title = 'registerController';
+        vm.gender = ['Male', 'Female', 'Other']
         var token;
 
         activate();
@@ -29,7 +30,7 @@
         vm.register = function() {
         
             console.log('passing values');
-            AuthFactory.verify(vm.email, vm.password, vm.number, vm.name, 'register').then(
+            AuthFactory.verify(vm.email, vm.password, vm.number, vm.name, vm.selectGender, 'register').then(
                 function(response){
                     token = response.token;
                     console.log(token);

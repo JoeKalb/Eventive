@@ -45,6 +45,7 @@ var eventSchema = new mongoose.Schema({
 		attendeeid: mongoose.Schema.Types.ObjectId,
 		attendeename: String, 
 		attendeenumber: String, 
+		gender: String,
 		checkin: Boolean,
 		_id: false
 	}],

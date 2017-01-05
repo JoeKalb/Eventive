@@ -15,6 +15,7 @@ module.exports.register = function(req, res) {
 	user.email = req.body.email;
 	user.number = req.body.number;
 	user.role = req.body.role;
+	user.gender = req.body.gender;
 	user.setPassword(req.body.password);
 
 	user.save(function(err) {
