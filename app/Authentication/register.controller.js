@@ -30,7 +30,7 @@
         vm.register = function() {
         
             console.log('passing values');
-            AuthFactory.verify(vm.email, vm.password, vm.number, vm.name, vm.selectGender, 'register').then(
+            AuthFactory.verify(vm.email, vm.password, vm.number, vm.name, 'register').then(
                 function(response){
                     token = response.token;
                     console.log(token);
