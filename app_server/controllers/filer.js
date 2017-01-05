@@ -112,10 +112,10 @@ module.exports.paintingGet = function (req, res) {
  	    }
 		var i = files.length;
 		console.log(i);
-		res.writeHead(200, {'Content-Type': files[0].contentType});
+		res.writeHead(200, {'Content-Type': files[i-1].contentType});
 		
 		var readstream = gfs.createReadStream({
-			  filename: files[0].filename
+			  filename: files[i-1].filename
 		});
  
 	    readstream.on('data', function(data) {
