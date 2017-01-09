@@ -146,7 +146,6 @@
         // sets the local storage values
         function setStorage(key, value) {
             storageFactory.setLocalStorage(key, value)
-                console.log("User info successfully stored");
                 return;
         }
 

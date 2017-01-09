@@ -21,13 +21,11 @@
         function activate() {
             EventsFactory.getAllEvents().then(
                 function(response){
-                    console.log(response);
 
                     vm.events = response;
                 });
 
             if ( !storageFactory.getLocalStorage('userInfo') ) {
-                console.log("User not signed in yet");
                 vm.id = "0";
             }
             else {

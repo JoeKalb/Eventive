@@ -31,7 +31,6 @@
             EventsFactory.getEventsByProfile(vm.id, vm.token).then(
                 function(response) {
                     vm.events = response;
-                    console.log(vm.events);
                 },
                 function(error) {
                     toastr.error("Something went wrong in the profile controller.")
@@ -42,7 +41,6 @@
         vm.removeEvent = function(eventId) {
             EventsFactory.removeEventFromUser(eventId, vm.id, vm.token).then(
                 function(response) {
-                    console.log(response);
                     $state.reload();
                 },
                 function(error) {
@@ -56,7 +54,6 @@
                 url: wineServer + 'files',
                 data: {"filefield": file, "userId": userId}
             }).then(function(response) {
-                console.log(response);
                 $state.reload();
             },
             function(error) {

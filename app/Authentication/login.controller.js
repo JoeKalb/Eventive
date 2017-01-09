@@ -41,11 +41,10 @@
             AuthFactory.verify(vm.email, vm.password, 0, 0, 'login').then(
                 function(response){
                     token = response.token; // grabs token
-                    console.log(token);
+
                     AuthFactory.getProfile(token).then(
                         function(response){
 
-                            console.log(response); // grabs profile
 
                             setStorage('userInfo', response);
                             setStorage('token', token);
