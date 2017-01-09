@@ -16,8 +16,8 @@ Includes the different modules and components needed for the front end
         ]);
 
         // has both the live and local server listed for easy changes when testing new features
-        //app.value ('wineServer', 'https://appventful.herokuapp.com/api/');
-        app.value ('wineServer', 'http://localhost:3000/api/');
+        app.value ('wineServer', 'https://appventful.herokuapp.com/api/');
+        //app.value ('wineServer', 'http://localhost:3000/api/');
 
         // configure the different states as well as adding the local storage
         app.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider',  function($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
