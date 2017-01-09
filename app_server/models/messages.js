@@ -1,3 +1,4 @@
+// Set up the messages schema for twilio 
 var mongoose = require('mongoose');
 
 var messageSchema = new mongoose.Schema({

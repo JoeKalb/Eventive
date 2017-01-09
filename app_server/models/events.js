@@ -1,3 +1,5 @@
+// set up the events schema
+
 var mongoose = require('mongoose');
 
 var eventSchema = new mongoose.Schema({

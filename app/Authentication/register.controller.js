@@ -1,3 +1,5 @@
+// registers a new user and brings them to the profile screen
+
 (function() {
     'use strict';
 
@@ -11,7 +13,6 @@
     function registerController(toastr, storageFactory, localStorageService, AuthFactory, $state) {
         var vm = this;
         vm.title = 'registerController';
-        vm.gender = ['Male', 'Female', 'Other']
         var token;
 
         activate();

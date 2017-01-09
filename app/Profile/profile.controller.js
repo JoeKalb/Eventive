@@ -1,3 +1,5 @@
+// adds the functions for the attendee
+
 (function() {
     'use strict';
 
@@ -18,7 +20,6 @@
         ////////////////
 
         function activate() {
-            console.log("here");
             if (storageFactory.getLocalStorage('userInfo').role == "organizer") $state.go('organizer');
             vm.email = storageFactory.getLocalStorage('userInfo').email;
             vm.password = storageFactory.getLocalStorage('userInfo').password;
@@ -35,16 +36,7 @@
                 function(error) {
                     toastr.error("Something went wrong in the profile controller.")
                 });
-            /*
-            imageFactory.getImage(vm.id).then(
-                function(response) {
-                    console.log(vm.pic)
-                    vm.pic = response;
-                },
-                function(error) {
-                    toastr.error("There was an error getting your profile picture.")
-                })
-            */
+            
         }
 
         vm.removeEvent = function(eventId) {
@@ -58,6 +50,7 @@
                 });
         }
 
+        // upload profile image
         $scope.upload= function(file, userId) {
             Upload.upload({
                 url: wineServer + 'files',

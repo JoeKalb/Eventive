@@ -1,3 +1,4 @@
+// Setting up the user schema as well as the encryptions token
 var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
 var mongoose = require('mongoose');
@@ -24,17 +25,17 @@ var userSchema = new mongoose.Schema({
 	hash: String,
 	salt: String
 }, { versionKey: false });
-// comments here!!! 
+// when new password is created set the salt and hash
 userSchema.methods.setPassword = function(password) {
 	this.salt = crypto.randomBytes(16).toString('hex');
 	this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
 };
-
+// validate existing password by using salt and hash
 userSchema.methods.validPassword = function(password) {
 	var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
 	return this.hash === hash;
 };
-
+// generate token and the pieces within the token
 userSchema.methods.generateJwt = function() {
 	var expiry = new Date();
 	expiry.setDate(expiry.getDate() + 7);

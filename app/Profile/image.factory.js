@@ -1,3 +1,4 @@
+// calls for an image upload and download
 (function() {
     'use strict';
     angular
@@ -13,6 +14,7 @@
         };
         return service;
         ////////////////
+        // gets the users image
         function getImage(userId) {
         	var defer = $q.defer();
 
@@ -35,6 +37,7 @@
         	return defer.promise;
         }
 
+        // post the users image
         function postImage(userId, file, errFiles) {
         	var defer = $q.defer();
 
@@ -59,6 +62,7 @@
         	}
         }
 
+        // allows the editting of users profile info
         function editProfile(userId, token, name, email, number) {
             var defer = $q.defer();
 

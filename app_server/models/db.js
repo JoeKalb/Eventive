@@ -1,13 +1,12 @@
+// Set up the datebase as well as requiring gridfs
+
 var mongoose = require('mongoose');
 var Grid = require('gridfs-stream');
 mongoose.Promise = global.Promise;
 var gracefulShutdown;
 var dbURI = 'mongodb://admin:pass1@ds115738.mlab.com:15738/wineandpaint';
-/*
-if (process.env.NODE_ENV === 'production') {
-	dbURI = process.env.MONGOLAB_URI
-}
-*/
+
+// connect the server to the database
 console.log(dbURI);
 Grid.mongo = mongoose.mongo;
 mongoose.connect(dbURI);

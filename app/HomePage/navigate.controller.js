@@ -1,3 +1,4 @@
+// adds the ability to clear the local storage when the user clicks "Log Out"
 (function() {
 	    'use strict';
 	

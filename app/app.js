@@ -1,4 +1,7 @@
-/*Add comments here*/
+/*
+Setting up the routes used for the front end of the application.
+Includes the different modules and components needed for the front end
+*/
 
 (function() {
     'use strict';
@@ -12,8 +15,11 @@
             'ngFileUpload'
         ]);
 
+        // has both the live and local server listed for easy changes when testing new features
         app.value ('wineServer', 'https://appventful.herokuapp.com/api/');
         //app.value ('wineServer', 'http://localhost:3000/api/');
+
+        // configure the different states as well as adding the local storage
         app.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider',  function($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
         	$urlRouterProvider.otherwise('/home');
 
@@ -76,6 +82,7 @@
 
         }]);
 
+        // adding a google maps rapper
         app.config(['uiGmapGoogleMapApiProvider', function(uiGmapGoogleMapApiProvider) {
             uiGmapGoogleMapApiProvider.configure({
                 key: 'AIzaSyBmXju8CHIaQIDu3DJIbrfj2oknuJhnNT4'

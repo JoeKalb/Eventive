@@ -1,3 +1,5 @@
+// integrate gridfs for uploading profile and painting images
+
 'use strict';
 
 var mongoose = require('mongoose');

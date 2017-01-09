@@ -31,10 +31,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(busboyBodyParser ({limit: '200mb'}));
-// might need to call on angular, refer after testing
-// folder connections should note be needed if gulp is used to serve, 
-// the front end but not used for the live server
 
+// Set up routes
 app.use(passport.initialize());
 app.use('/api', routesApi);
 

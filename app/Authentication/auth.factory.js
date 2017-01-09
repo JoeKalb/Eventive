@@ -1,3 +1,5 @@
+// handles the registration, login, verification and token server calls
+
 (function() {
     'use strict';
     angular

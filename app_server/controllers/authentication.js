@@ -1,3 +1,5 @@
+// authentication controller for returning the token
+
 var passport = require('passport');
 var mongoose = require('mongoose');
 var User = mongoose.model('User');

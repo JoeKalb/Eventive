@@ -1,3 +1,5 @@
+// Events controller for various actions
+
 var mongoose = require('mongoose');
 var Event = mongoose.model('Event');
 

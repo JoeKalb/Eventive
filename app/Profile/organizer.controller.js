@@ -1,3 +1,5 @@
+// holds the organizers ability to create, edit, or delete events
+
 (function() {
     'use strict';
 
@@ -12,8 +14,8 @@
         var vm = this;
         vm.title = 'organizerController';
         vm.editor = 'static';
-        vm.date = new Date();
-        vm.date2 = new Date();
+        vm.date = new Date(); // gets set to whatever date will be submitted
+        vm.date2 = new Date(); // is kept at todays data for easy editting 
         vm.levels = ['NOVICE', 'INTERMEDIATE', 'ADVANCED', 'REMBRANDT'];
         vm.max = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
         vm.editUpcomingEvent = false;
@@ -40,7 +42,7 @@
                     toastr.error("Something went wrong in the profile controller.")
                 })
         }
-
+        // pulls the screen down once the edit button is clicked
         $scope.goToEditor = function() {
             $location.hash('editor');
             $anchorScroll;
@@ -111,6 +113,7 @@
                 }) 
         }
 
+        // upload profile image 
         $scope.upload = function(file, userId) {
             Upload.upload({
                 url: wineServer + 'files',
@@ -124,6 +127,7 @@
             })
         }
 
+        // upload painting
         $scope.uploadPainting = function(file, eventId) {
             Upload.upload({
                 url: wineServer + 'files/' + eventId + '/painting', 
@@ -139,6 +143,7 @@
             })
         }
 
+        // sets the local storage values
         function setStorage(key, value) {
             storageFactory.setLocalStorage(key, value)
                 console.log("User info successfully stored");

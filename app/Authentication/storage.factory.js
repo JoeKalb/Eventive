@@ -1,3 +1,5 @@
+// Give the ability to access local storage
+
 (function() {
     'use strict';
     angular
