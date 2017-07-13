@@ -16,6 +16,7 @@ var ctrlFiles = require('../controllers/filer');
 router.get('/', function (req, res){
 	res.json({message: 'The server is working!'});
 });
+
 // profile connection
 router.get('/profile', auth, ctrlProfile.profileRead);
 router.put('/profile/:profile_id', auth, ctrlProfile.profileEdit);
